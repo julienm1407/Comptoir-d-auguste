@@ -1,0 +1,96 @@
+:root {
+  /* Brand colors — official palette */
+  --color-bronze: #b18c53;
+  --color-bronze-soft: #c4a36e;
+  --color-bronze-deep: #8f7040;
+  --color-dark: #23272a;
+  --color-dark-soft: #2e3438;
+  --color-blue: #c2dcff;
+  --color-blue-soft: #dceaff;
+  --color-blue-wash: #eef5ff;
+  --color-white: #ffffff;
+  --color-ivory: #f8f6f1;
+  --color-ivory-deep: #efebe3;
+  --color-muted: #4a5158;
+  --color-border: rgba(35, 39, 42, 0.1);
+  --color-border-light: rgba(255, 255, 255, 0.14);
+
+  /* Typography — Roman SD (display) + Inter (body) */
+  --font-display: var(--font-romane), "Roman SD", "Romane SD", Georgia, serif;
+  --font-body: var(--font-inter), "Inter", system-ui, sans-serif;
+
+  /* Type scale */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.8125rem);
+  --text-sm: clamp(0.875rem, 0.82rem + 0.25vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+  --text-md: clamp(1.0625rem, 1rem + 0.3vw, 1.125rem);
+  --text-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-xl: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --text-2xl: clamp(2rem, 1.5rem + 1.8vw, 3rem);
+  --text-3xl: clamp(2.5rem, 1.8rem + 2.5vw, 4rem);
+  --text-hero: clamp(2.75rem, 2rem + 3.2vw, 4.75rem);
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.65;
+  --leading-relaxed: 1.75;
+
+  --tracking-tight: -0.01em;
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.12em;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  --section-y: clamp(3rem, 2rem + 4vw, 6.5rem);
+  --section-y-sm: clamp(2rem, 1.5rem + 2.5vw, 4.5rem);
+
+  /* Layout */
+  --container: 72rem;
+  --container-narrow: 42rem;
+  --container-wide: 88rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --header-h: 4.5rem;
+  --mobile-order-h: 4.5rem;
+
+  /* Radii */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(35, 39, 42, 0.04);
+  --shadow-md: 0 10px 30px rgba(35, 39, 42, 0.06);
+  --shadow-lg: 0 20px 50px rgba(35, 39, 42, 0.1);
+  --shadow-focus: 0 0 0 3px rgba(194, 220, 255, 0.8);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 160ms;
+  --duration: 280ms;
+  --duration-slow: 520ms;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-h: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 5.25rem;
+  }
+}
