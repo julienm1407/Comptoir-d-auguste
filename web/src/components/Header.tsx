@@ -30,10 +30,10 @@ export function Header() {
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.logo} aria-label="Comptoir d’Auguste — Accueil">
           <Image
-            src="/brand/logo-titre-horizontal.png"
+            src="/brand/logo-header.png"
             alt="Comptoir d’Auguste"
-            width={320}
-            height={72}
+            width={1024}
+            height={1024}
             className={styles.logoImage}
             priority
           />

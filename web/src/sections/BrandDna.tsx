@@ -39,7 +39,6 @@ export function BrandDna() {
               Derrière chaque plat, une envie de bien faire.
             </h2>
             <p className={styles.lead}>{officialBrandCopy.philosophy}</p>
-            <p className={styles.text}>{officialBrandCopy.intro}</p>
 
             <ul className={styles.pillars}>
               {pillars.map((item) => (

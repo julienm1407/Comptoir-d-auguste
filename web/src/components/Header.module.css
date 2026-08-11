@@ -28,26 +28,35 @@
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  flex-shrink: 1;
-  min-width: 0;
-  height: 2.85rem;
-  width: auto;
-  max-width: min(11rem, 48vw);
-  padding: 0.2rem 0.4rem;
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 4.25rem;
+  height: 4.25rem;
+  padding: 0.25rem;
   overflow: hidden;
+  background: #f7f4ee;
+  border: 1px solid rgba(177, 140, 83, 0.35);
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(35, 39, 42, 0.12);
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.logo:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-bronze);
+  box-shadow: 0 10px 24px rgba(35, 39, 42, 0.16);
 }
 
 .logoImage {
-  width: auto;
+  display: block;
+  width: 100%;
   height: 100%;
-  max-width: 100%;
   object-fit: contain;
-  object-position: left center;
+  object-position: center center;
 }
 
 .nav {
@@ -152,8 +161,8 @@
 
 @media (min-width: 430px) {
   .logo {
-    height: 3.25rem;
-    max-width: min(13rem, 52vw);
+    width: 4.5rem;
+    height: 4.5rem;
   }
 
   .mobileCta {
@@ -162,24 +171,16 @@
 }
 
 @media (min-width: 768px) {
-  .header {
-    height: 5rem;
-  }
-
   .logo {
-    height: 3.5rem;
-    max-width: 15rem;
+    width: 4.85rem;
+    height: 4.85rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .header {
-    height: 5.25rem;
-  }
-
   .logo {
-    height: 3.75rem;
-    max-width: 17rem;
+    width: 5.25rem;
+    height: 5.25rem;
   }
 
   .nav {

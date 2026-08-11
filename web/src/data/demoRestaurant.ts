@@ -10,10 +10,10 @@ export const demoRestaurant: RestaurantInfo = {
   positioning:
     "Inspiré des saveurs de la Provence et de la Méditerranée, Comptoir d’Auguste vous invite à découvrir une cuisine généreuse, entièrement faite maison, élaborée chaque jour à partir de produits frais et de saison.",
   address: {
-    street: "Adresse à confirmer",
-    postalCode: "",
-    city: "À confirmer",
-    full: "Adresse du restaurant à confirmer",
+    street: "2459 Avenue Pierre-Auguste Renoir",
+    postalCode: "83500",
+    city: "La Seyne-sur-Mer",
+    full: "2459 Avenue Pierre-Auguste Renoir, 83500 La Seyne-sur-Mer",
   },
   phone: "Téléphone à confirmer",
   email: "contact@comptoirdauguste.fr",
@@ -22,11 +22,11 @@ export const demoRestaurant: RestaurantInfo = {
     { label: "TikTok", href: "#" },
     { label: "Facebook", href: "#" },
   ],
-  mapEmbedUrl: "",
-  mapLink: "#",
-  notes: [
-    "Les informations pratiques ci-dessous sont des placeholders en attendant les données définitives.",
-  ],
+  mapEmbedUrl:
+    "https://www.google.com/maps?q=2459+Avenue+Pierre-Auguste+Renoir,+83500+La+Seyne-sur-Mer&output=embed",
+  mapLink:
+    "https://www.google.com/maps/search/?api=1&query=2459+Avenue+Pierre-Auguste+Renoir+83500+La+Seyne-sur-Mer",
+  notes: [],
 };
 
 export const officialBrandCopy = {

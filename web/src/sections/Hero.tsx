@@ -68,16 +68,19 @@ export function Hero() {
       </div>
 
       <div className={styles.content}>
-        <div className={styles.brandLogoWrap}>
-          {/* img natif pour conserver l’animation du GIF */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/brand/logo-carousel.gif"
-            alt="Comptoir d’Auguste"
-            width={180}
-            height={180}
-            className={styles.brandLogo}
-          />
+        <div className={styles.brandRow}>
+          <div className={styles.brandLogoWrap}>
+            {/* img natif pour conserver l’animation du GIF */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/logo-carousel.gif"
+              alt=""
+              width={180}
+              height={180}
+              className={styles.brandLogo}
+            />
+          </div>
+          <p className={styles.brandName}>Comptoir d’Auguste</p>
         </div>
         <h1 id="hero-title" className={styles.title}>
           L’art de la cuisine maison.
