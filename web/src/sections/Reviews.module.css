@@ -1,5 +1,6 @@
 .section {
   background: var(--color-blue-wash);
+  overflow: visible;
 }
 
 .grid {

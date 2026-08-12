@@ -4,6 +4,8 @@
  *
  * @package Comptoir_Auguste
  */
+
+$r = ca_restaurant();
 ?>
 <section class="section <?php echo esc_attr(ca_class('Location', 'section')); ?>" aria-labelledby="location-title">
 	<div class="container <?php echo esc_attr(ca_class('Location', 'grid')); ?>">
@@ -13,7 +15,7 @@
 					<?php esc_html_e('Retrouvez Auguste', 'comptoir-auguste'); ?>
 				</h2>
 				<p class="<?php echo esc_attr(ca_class('SectionTitle', 'text')); ?>">
-					<?php esc_html_e('Sur place, à emporter ou en livraison — les informations pratiques seront précisées dès confirmation.', 'comptoir-auguste'); ?>
+					<?php esc_html_e('Sur place, à emporter ou en livraison — venez nous rejoindre à La Seyne-sur-Mer.', 'comptoir-auguste'); ?>
 				</p>
 			</div>
 			<div class="<?php echo esc_attr(ca_class('Location', 'info')); ?>">
@@ -25,10 +27,21 @@
 			</a>
 		</div>
 		<div class="reveal <?php echo esc_attr(ca_class('Location', 'map')); ?>">
-			<div class="<?php echo esc_attr(ca_class('Location', 'mapPlaceholder')); ?>">
-				<p><?php esc_html_e('Carte interactive à venir', 'comptoir-auguste'); ?></p>
-				<span><?php esc_html_e('Emplacement à confirmer', 'comptoir-auguste'); ?></span>
-			</div>
+			<?php if (!empty($r['mapEmbedUrl'])) : ?>
+				<iframe
+					class="<?php echo esc_attr(ca_class('Location', 'mapFrame')); ?>"
+					title="<?php echo esc_attr(sprintf(/* translators: %s address */ __('Carte — %s', 'comptoir-auguste'), $r['address'])); ?>"
+					src="<?php echo esc_url($r['mapEmbedUrl']); ?>"
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
+					allowfullscreen
+				></iframe>
+			<?php else : ?>
+				<a class="<?php echo esc_attr(ca_class('Location', 'mapPlaceholder')); ?>" href="<?php echo esc_url($r['mapLink'] ?? '#'); ?>" target="_blank" rel="noreferrer">
+					<p><?php esc_html_e('Voir sur Google Maps', 'comptoir-auguste'); ?></p>
+					<span><?php echo esc_html($r['address']); ?></span>
+				</a>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>

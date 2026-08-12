@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import styles from "./SideMosaic.module.css";
 
-type MosaicVariant = "bleed" | "corners" | "dense";
+type MosaicVariant = "bleed" | "corners" | "dense" | "soft";
 
 interface SideMosaicProps {
   leftSrc?: string;

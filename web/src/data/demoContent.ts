@@ -5,13 +5,13 @@ import { ORDER_URL } from "@/config/site";
  * DEMO DATA — replace with Custom Fields / Options (WordPress).
  */
 export const openingHours: OpeningHour[] = [
-  { day: "Lundi", hours: "Horaires à confirmer" },
-  { day: "Mardi", hours: "Horaires à confirmer" },
-  { day: "Mercredi", hours: "Horaires à confirmer" },
-  { day: "Jeudi", hours: "Horaires à confirmer" },
-  { day: "Vendredi", hours: "Horaires à confirmer" },
-  { day: "Samedi", hours: "Horaires à confirmer" },
-  { day: "Dimanche", hours: "Horaires à confirmer" },
+  { day: "Lundi", hours: "8h00 – 16h00" },
+  { day: "Mardi", hours: "8h00 – 16h00" },
+  { day: "Mercredi", hours: "8h00 – 16h00" },
+  { day: "Jeudi", hours: "8h00 – 16h00" },
+  { day: "Vendredi", hours: "8h00 – 16h00" },
+  { day: "Samedi", hours: "", closed: true },
+  { day: "Dimanche", hours: "", closed: true },
 ];
 
 export const deliveryOptions: DeliveryOption[] = [

@@ -9,10 +9,9 @@ export function Reviews() {
   return (
     <section className={`section ${styles.section}`} aria-labelledby="reviews-title">
       <SideMosaic
-        leftSrc="/brand/cutouts/mosaique-2-cutout.webp"
-        rightSrc="/brand/cutouts/mosaique-3-cutout.webp"
-        accentSrc="/brand/cutouts/mosaique-1-cutout.webp"
-        variant="corners"
+        leftSrc="/brand/cutouts/rameaux-olivier-cutout.webp"
+        rightSrc="/brand/cutouts/cigalle-cutout.webp"
+        variant="soft"
       >
         <div className="container">
           <Reveal>

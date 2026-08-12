@@ -5,7 +5,7 @@
  * @package Comptoir_Auguste
  */
 
-$categories = ca_categories();
+$categories = ca_home_categories();
 ?>
 <section class="section <?php echo esc_attr(ca_class('MenuPreview', 'section')); ?>" aria-labelledby="menu-preview-title">
 	<?php
@@ -23,7 +23,7 @@ $categories = ca_categories();
 								<?php esc_html_e('La cuisine d’Auguste', 'comptoir-auguste'); ?>
 							</h2>
 							<p class="<?php echo esc_attr(ca_class('SectionTitle', 'text')); ?>">
-								<?php esc_html_e('Cinq familles pour commander simplement — viandes, poissons, végétarien, épicés et vegan.', 'comptoir-auguste'); ?>
+								<?php esc_html_e('Formules, entrées, plats du moment, salades, snacking et desserts — plus les boissons sur la carte complète.', 'comptoir-auguste'); ?>
 							</p>
 						</div>
 					</div>

@@ -77,7 +77,23 @@
   font-family: var(--font-body);
   font-size: var(--text-sm);
   line-height: 1.65;
+  text-align: left;
   text-wrap: pretty;
+}
+
+.compact .description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.9em;
+}
+
+.compact .name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .cta {

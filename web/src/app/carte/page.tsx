@@ -10,7 +10,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "La carte",
   description:
-    "Viandes, poissons, végétarien, épicés et vegan — une cuisine maison qui suit les saisons.",
+    "Formules, entrées, plats du moment, salades, snacking, desserts et boissons — la carte du Comptoir d’Auguste.",
 };
 
 export default function CartePage() {
@@ -18,7 +18,7 @@ export default function CartePage() {
     <>
       <PageHero
         title="La carte"
-        text="Une cuisine maison, classée simplement : viandes, poissons, végétarien, épicés et vegan."
+        text="Formules, plats du moment, salades, snacking, desserts et boissons — une cuisine maison, claire et généreuse."
       />
 
       <div className={styles.shell}>
@@ -43,6 +43,10 @@ export default function CartePage() {
               const products = demoProducts.filter(
                 (product) => product.categorySlug === category.slug,
               );
+              const families = [
+                ...new Set(products.map((p) => p.family).filter(Boolean)),
+              ] as string[];
+              const useFamilies = families.length > 1;
 
               return (
                 <section
@@ -53,12 +57,7 @@ export default function CartePage() {
                 >
                   <div className={styles.categoryHeader}>
                     <span className={styles.categoryMosaic}>
-                      <Image
-                        src={category.mosaic}
-                        alt=""
-                        width={72}
-                        height={72}
-                      />
+                      <Image src={category.mosaic} alt="" width={72} height={72} />
                     </span>
                     <div>
                       <h2 id={`${category.slug}-title`}>{category.name}</h2>
@@ -66,7 +65,27 @@ export default function CartePage() {
                     </div>
                   </div>
 
-                  {products.length > 0 ? (
+                  {products.length === 0 ? (
+                    <p className={styles.empty}>
+                      Les plats de cette catégorie seront ajoutés prochainement.
+                    </p>
+                  ) : useFamilies ? (
+                    families.map((family) => {
+                      const familyProducts = products.filter((p) => p.family === family);
+                      return (
+                        <div key={family} className={styles.family}>
+                          <h3 className={styles.familyTitle}>{family}</h3>
+                          <div className={styles.grid}>
+                            {familyProducts.map((product) => (
+                              <div key={product.id} id={product.slug}>
+                                <ProductCard product={product} />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    })
+                  ) : (
                     <div className={styles.grid}>
                       {products.map((product) => (
                         <div key={product.id} id={product.slug}>
@@ -74,10 +93,6 @@ export default function CartePage() {
                         </div>
                       ))}
                     </div>
-                  ) : (
-                    <p className={styles.empty}>
-                      Les plats de cette catégorie seront ajoutés prochainement.
-                    </p>
                   )}
                 </section>
               );

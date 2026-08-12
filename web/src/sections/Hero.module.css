@@ -2,11 +2,13 @@
   position: relative;
   isolation: isolate;
   display: grid;
-  align-items: end;
+  align-items: center;
+  justify-items: center;
   min-height: min(88svh, 44rem);
   overflow: hidden;
   color: var(--color-white);
   background: var(--color-dark);
+  padding-block: var(--space-4) calc(var(--space-8) + 2.5rem);
 }
 
 .carousel {
@@ -48,23 +50,30 @@
   pointer-events: none;
 }
 
-.content {
+.stage {
   position: relative;
   z-index: 1;
   display: grid;
-  gap: var(--space-3);
-  justify-items: start;
-  align-content: end;
-  width: min(100% - (var(--gutter) * 2), 36rem);
-  margin-inline: auto;
-  margin-bottom: calc(var(--space-8) + 2.5rem);
+  gap: var(--space-4);
   justify-self: center;
-  padding: 1.15rem 1.15rem 1.25rem;
-  background: rgba(35, 39, 42, 0.5);
+  align-self: center;
+  width: min(100% - (var(--gutter) * 2), var(--container));
+  margin-inline: auto;
+  margin-bottom: 0;
+  animation: rise 0.85s var(--ease-out) both;
+}
+
+.content {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: stretch;
+  align-content: end;
+  width: 100%;
+  padding: 1.5rem 1.35rem 1.6rem;
+  background: rgba(35, 39, 42, 0.55);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-xl);
   backdrop-filter: blur(10px);
-  animation: rise 0.85s var(--ease-out) both;
   text-align: left;
 }
 
@@ -79,8 +88,8 @@
   flex-shrink: 0;
   display: grid;
   place-items: center;
-  width: clamp(5.5rem, 22vw, 7.5rem);
-  height: clamp(5.5rem, 22vw, 7.5rem);
+  width: clamp(6rem, 24vw, 8rem);
+  height: clamp(6rem, 24vw, 8rem);
   padding: 0.4rem;
   background: var(--color-white);
   border-radius: 50%;
@@ -98,12 +107,13 @@
 .brandName {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 1rem + 2.2vw, 2.35rem);
+  font-size: clamp(1.5rem, 1.1rem + 2.4vw, 2.6rem);
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-white);
+  text-align: left;
   text-wrap: balance;
 }
 
@@ -119,22 +129,25 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(1.9rem, 1.4rem + 3.2vw, 3.75rem);
+  font-size: clamp(2rem, 1.5rem + 3.2vw, 3.9rem);
   font-weight: 400;
   line-height: 1.18;
   letter-spacing: 0.01em;
   color: var(--color-white);
-  max-width: 14ch;
+  max-width: 16ch;
+  text-align: left;
   text-wrap: balance;
 }
 
 .text {
-  max-width: 28rem;
+  max-width: none;
   font-family: var(--font-body);
-  font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.125rem);
-  line-height: 1.65;
+  font-size: clamp(0.98rem, 0.92rem + 0.35vw, 1.15rem);
+  line-height: 1.7;
   color: rgba(255, 255, 255, 0.94);
+  text-align: justify;
   text-wrap: pretty;
+  hyphens: auto;
 }
 
 .cta {
@@ -142,6 +155,95 @@
   min-width: 0;
   width: 100%;
   max-width: 16rem;
+  justify-self: start;
+}
+
+.spotlight {
+  display: grid;
+  align-content: end;
+  align-self: end;
+}
+
+.spotlightLabel {
+  position: absolute;
+  z-index: 2;
+  top: 0.85rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0.45rem 0.9rem;
+  font-size: clamp(0.72rem, 0.68rem + 0.25vw, 0.85rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  text-align: center;
+  white-space: nowrap;
+  background: var(--color-bronze);
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
+.spotlightCard {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  background: rgba(35, 39, 42, 0.72);
+  border: 2px solid var(--color-bronze);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(10px);
+  color: inherit;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  transition:
+    transform var(--duration) var(--ease-out),
+    box-shadow var(--duration) var(--ease-out),
+    border-color var(--duration) var(--ease-out);
+}
+
+.spotlightCard:hover {
+  transform: translateY(-0.25rem);
+  border-color: var(--color-bronze-soft);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.42);
+}
+
+.spotlightMedia {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.spotlightMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(35, 39, 42, 0.18) 0%,
+    rgba(35, 39, 42, 0.05) 40%,
+    rgba(35, 39, 42, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+.spotlightImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.spotlightBody {
+  display: grid;
+  padding: 1rem 1.15rem 1.25rem;
+  text-align: center;
+  background: rgba(35, 39, 42, 0.88);
+}
+
+.spotlightName {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--color-white);
 }
 
 .controls {
@@ -213,6 +315,7 @@
 @media (min-width: 768px) {
   .hero {
     min-height: min(90svh, 50rem);
+    padding-block: var(--space-5) calc(var(--space-8) + 2rem);
   }
 
   .shade {
@@ -231,34 +334,61 @@
       );
   }
 
+  .stage {
+    grid-template-columns: minmax(0, 1.35fr) minmax(14rem, 0.75fr);
+    align-items: end;
+    gap: var(--space-5);
+  }
+
   .content {
-    justify-self: start;
-    margin-left: max(var(--gutter), calc((100% - var(--container)) / 2));
-    margin-inline: max(var(--gutter), calc((100% - var(--container)) / 2)) auto;
-    padding: 1.5rem 1.75rem;
-    gap: var(--space-4);
+    padding: 1.85rem 2rem 2rem;
+    gap: var(--space-5);
   }
 
   .cta {
     width: auto;
     min-width: 11rem;
   }
+
+  .spotlight {
+    width: 100%;
+    max-width: 18rem;
+    justify-self: end;
+  }
+
+  .spotlightMedia {
+    aspect-ratio: 1 / 1;
+  }
 }
 
 @media (min-width: 1024px) {
   .hero {
-    min-height: min(92vh, 52rem);
-    padding-bottom: 1rem;
+    min-height: min(88vh, 48rem);
+    padding-block: var(--space-5) calc(var(--space-8) + 1.5rem);
+  }
+
+  .stage {
+    gap: var(--space-6);
+    grid-template-columns: minmax(0, 1.45fr) minmax(16rem, 20rem);
+    align-items: end;
   }
 
   .content {
-    margin-bottom: var(--space-8);
-    padding: 2rem 2.25rem;
+    padding: 2.25rem 2.5rem 2.4rem;
+    min-height: 22rem;
+  }
+
+  .spotlight {
+    max-width: 20rem;
   }
 
   .brandLogoWrap {
-    width: clamp(6.5rem, 18vw, 8.5rem);
-    height: clamp(6.5rem, 18vw, 8.5rem);
+    width: clamp(7rem, 12vw, 9rem);
+    height: clamp(7rem, 12vw, 9rem);
+  }
+
+  .text {
+    max-width: 38rem;
   }
 
   .controls {
@@ -267,9 +397,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .content,
-  .brandLogoWrap {
+  .stage,
+  .brandLogoWrap,
+  .spotlightCard {
     animation: none;
+    transition: none;
   }
 
   .slide {

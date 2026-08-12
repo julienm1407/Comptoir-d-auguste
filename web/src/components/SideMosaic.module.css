@@ -83,6 +83,29 @@
   transform: translate(-32%, -54%);
 }
 
+/* Stay mostly in side gutters — avoid covering cards */
+.soft .leftPiece {
+  right: 0;
+  left: auto;
+  top: 34%;
+  width: clamp(6.5rem, 8.5vw, 10.5rem);
+  transform: translate(-58%, -50%);
+  opacity: 0.9;
+}
+
+.soft .rightPiece {
+  left: 0;
+  right: auto;
+  top: 64%;
+  width: clamp(6rem, 8vw, 9.5rem);
+  transform: translate(58%, -50%);
+  opacity: 0.9;
+}
+
+.soft .accentPiece {
+  display: none;
+}
+
 @media (max-width: 1023px) {
   .frame {
     grid-template-columns: 1fr;
@@ -112,6 +135,16 @@
   .accentPiece {
     display: none;
   }
+
+  .soft .leftPiece {
+    width: clamp(5.5rem, 7.5vw, 8.5rem);
+    transform: translate(-62%, -50%);
+  }
+
+  .soft .rightPiece {
+    width: clamp(5rem, 7vw, 8rem);
+    transform: translate(62%, -50%);
+  }
 }
 
 @media (min-width: 1440px) {
@@ -121,5 +154,13 @@
 
   .rightPiece {
     width: clamp(12rem, 15vw, 20rem);
+  }
+
+  .soft .leftPiece {
+    width: clamp(8rem, 10vw, 12rem);
+  }
+
+  .soft .rightPiece {
+    width: clamp(7.5rem, 9vw, 11rem);
   }
 }

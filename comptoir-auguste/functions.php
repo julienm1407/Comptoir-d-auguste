@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('CA_THEME_VERSION', '1.0.0');
+define('CA_THEME_VERSION', '1.1.3');
 define('CA_THEME_DIR', get_template_directory());
 define('CA_THEME_URI', get_template_directory_uri());
 
@@ -27,6 +27,7 @@ if (!defined('CA_ORDER_URL')) {
 }
 
 require_once CA_THEME_DIR . '/inc/helpers.php';
+require_once CA_THEME_DIR . '/inc/menu-data.php';
 require_once CA_THEME_DIR . '/inc/data.php';
 require_once CA_THEME_DIR . '/inc/setup.php';
 require_once CA_THEME_DIR . '/inc/enqueue.php';

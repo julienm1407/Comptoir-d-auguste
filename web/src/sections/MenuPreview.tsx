@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { demoCategories } from "@/data/demoProducts";
+import { homeCategories } from "@/data/demoProducts";
 import { CategoryCard } from "@/components/CategoryCard";
 import { Reveal } from "@/components/Reveal";
 import { SectionTitle } from "@/components/SectionTitle";
@@ -19,7 +19,7 @@ export function MenuPreview() {
             <Reveal>
               <SectionTitle
                 title="La cuisine d’Auguste"
-                text="Cinq familles pour commander simplement — viandes, poissons, végétarien, épicés et vegan."
+                text="Formules, entrées, plats du moment, salades, snacking et desserts — plus les boissons sur la carte complète."
               />
             </Reveal>
             <Reveal>
@@ -30,7 +30,7 @@ export function MenuPreview() {
           </div>
 
           <div className={styles.grid}>
-            {demoCategories.map((category) => (
+            {homeCategories.map((category) => (
               <Reveal key={category.id}>
                 <CategoryCard category={category} />
               </Reveal>

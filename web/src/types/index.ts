@@ -1,11 +1,14 @@
 export type ProductBadge = "du-jour" | "de-saison" | "nouveau" | "signature";
 
 export type CategorySlug =
-  | "viandes"
-  | "poissons"
-  | "vegetarien"
-  | "epices"
-  | "vegan";
+  | "formules"
+  | "entrees"
+  | "plats-du-moment"
+  | "salades"
+  | "snacking"
+  | "desserts"
+  | "boissons"
+  | "boissons-chaudes";
 
 export interface Category {
   id: string;
@@ -13,6 +16,7 @@ export interface Category {
   name: string;
   description: string;
   mosaic: string;
+  showOnHome?: boolean;
 }
 
 export interface Product {
@@ -22,6 +26,8 @@ export interface Product {
   description: string;
   price: number;
   categorySlug: CategorySlug;
+  /** Sous-famille (ex. Sodas, Bières) pour regrouper dans la carte */
+  family?: string;
   image: string;
   badge?: ProductBadge;
   featured?: boolean;

@@ -107,6 +107,22 @@
   line-height: 1.6;
 }
 
+.family {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.familyTitle {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-bronze-deep);
+}
+
 .grid {
   display: grid;
   gap: var(--space-4);

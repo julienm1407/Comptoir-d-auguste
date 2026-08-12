@@ -13,10 +13,10 @@ $order = ca_order_url();
 		<a class="<?php echo esc_attr(ca_class('Header', 'logo')); ?>" href="<?php echo esc_url(home_url('/')); ?>" aria-label="<?php esc_attr_e('Comptoir d’Auguste — Accueil', 'comptoir-auguste'); ?>">
 			<img
 				class="<?php echo esc_attr(ca_class('Header', 'logoImage')); ?>"
-				src="<?php echo esc_url(ca_brand('logo-titre-horizontal.png')); ?>"
+				src="<?php echo esc_url(ca_brand('logo-header.png')); ?>"
 				alt="<?php esc_attr_e('Comptoir d’Auguste', 'comptoir-auguste'); ?>"
-				width="320"
-				height="72"
+				width="180"
+				height="180"
 			>
 		</a>
 

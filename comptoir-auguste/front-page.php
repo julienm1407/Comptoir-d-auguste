@@ -12,8 +12,6 @@ get_header();
 <?php get_template_part('template-parts/sections/menu', 'preview'); ?>
 <?php get_template_part('template-parts/sections/featured', 'dishes'); ?>
 <?php get_template_part('template-parts/sections/brand', 'dna'); ?>
-<?php get_template_part('template-parts/sections/fresh', 'season'); ?>
-<?php get_template_part('template-parts/sections/mosaic', 'inset'); ?>
 <?php get_template_part('template-parts/sections/reviews'); ?>
 <?php get_template_part('template-parts/sections/delivery', 'home'); ?>
 <div class="container section--tight">

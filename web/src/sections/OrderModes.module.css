@@ -13,13 +13,16 @@
 }
 
 .card {
+  position: relative;
   display: grid;
-  gap: var(--space-3);
-  padding: var(--space-6);
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-5) var(--space-5) calc(var(--space-5) + 2px);
   background: var(--color-white);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
-  border-bottom: 3px solid var(--color-blue);
+  overflow: hidden;
   text-align: left;
   transition:
     border-color var(--duration) var(--ease-out),
@@ -28,9 +31,29 @@
 }
 
 .card:hover {
-  border-bottom-color: var(--color-bronze);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-md);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 1rem;
+  color: var(--color-dark);
+  flex-shrink: 0;
+}
+
+.iconSvg {
+  width: 1.85rem;
+  height: 1.85rem;
+}
+
+.copy {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
 }
 
 .name {
@@ -49,6 +72,68 @@
   line-height: 1.65;
 }
 
+.accent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+}
+
+/* Livraison — bleu */
+.tone-delivery {
+  border-color: rgba(194, 220, 255, 0.95);
+}
+
+.tone-delivery .icon {
+  background: var(--color-blue);
+  color: var(--color-dark);
+}
+
+.tone-delivery .accent {
+  background: linear-gradient(90deg, var(--color-blue), var(--color-blue-soft));
+}
+
+.tone-delivery:hover {
+  border-color: #9fc4f5;
+}
+
+/* À emporter — bronze */
+.tone-takeaway {
+  border-color: rgba(177, 140, 83, 0.28);
+}
+
+.tone-takeaway .icon {
+  background: rgba(177, 140, 83, 0.16);
+  color: var(--color-bronze-deep);
+}
+
+.tone-takeaway .accent {
+  background: linear-gradient(90deg, var(--color-bronze), var(--color-bronze-soft));
+}
+
+.tone-takeaway:hover {
+  border-color: rgba(177, 140, 83, 0.5);
+}
+
+/* Sur place — sombre */
+.tone-dine-in {
+  border-color: rgba(35, 39, 42, 0.14);
+}
+
+.tone-dine-in .icon {
+  background: var(--color-dark);
+  color: var(--color-blue-soft);
+}
+
+.tone-dine-in .accent {
+  background: linear-gradient(90deg, var(--color-dark), #4a5158);
+}
+
+.tone-dine-in:hover {
+  border-color: rgba(35, 39, 42, 0.28);
+}
+
 .cta {
   display: flex;
   justify-content: center;
@@ -58,5 +143,11 @@
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-5);
+  }
+
+  .card {
+    min-height: 100%;
+    padding: var(--space-6) var(--space-5) calc(var(--space-6) + 2px);
   }
 }

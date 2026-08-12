@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { ORDER_URL } from "@/config/site";
+import { featuredProducts } from "@/data/demoProducts";
 import { Button } from "@/components/Button";
 import styles from "./Hero.module.css";
 
@@ -24,6 +26,8 @@ const slides = [
     alt: "Cuisine préparée avec passion",
   },
 ];
+
+const spotlight = featuredProducts[0];
 
 export function Hero() {
   const [index, setIndex] = useState(0);
@@ -67,31 +71,55 @@ export function Hero() {
         <div className={styles.shade} />
       </div>
 
-      <div className={styles.content}>
-        <div className={styles.brandRow}>
-          <div className={styles.brandLogoWrap}>
-            {/* img natif pour conserver l’animation du GIF */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand/logo-carousel.gif"
-              alt=""
-              width={180}
-              height={180}
-              className={styles.brandLogo}
-            />
+      <div className={styles.stage}>
+        <div className={styles.content}>
+          <div className={styles.brandRow}>
+            <div className={styles.brandLogoWrap}>
+              {/* img natif pour conserver l’animation du GIF */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brand/logo-carousel.gif"
+                alt=""
+                width={180}
+                height={180}
+                className={styles.brandLogo}
+              />
+            </div>
+            <p className={styles.brandName}>Comptoir d’Auguste</p>
           </div>
-          <p className={styles.brandName}>Comptoir d’Auguste</p>
+          <h1 id="hero-title" className={styles.title}>
+            L’art de la cuisine maison.
+          </h1>
+          <p className={styles.text}>
+            Inspiré des saveurs de la Provence et de la Méditerranée — une cuisine
+            généreuse, entièrement faite maison.
+          </p>
+          <Button href={ORDER_URL} size="lg" className={styles.cta}>
+            Commander
+          </Button>
         </div>
-        <h1 id="hero-title" className={styles.title}>
-          L’art de la cuisine maison.
-        </h1>
-        <p className={styles.text}>
-          Inspiré des saveurs de la Provence et de la Méditerranée — une cuisine
-          généreuse, entièrement faite maison.
-        </p>
-        <Button href={ORDER_URL} size="lg" className={styles.cta}>
-          Commander
-        </Button>
+
+        {spotlight ? (
+          <aside className={styles.spotlight} aria-labelledby="spotlight-title">
+            <Link href="/carte" className={styles.spotlightCard}>
+              <p id="spotlight-title" className={styles.spotlightLabel}>
+                À l’affiche
+              </p>
+              <div className={styles.spotlightMedia}>
+                <Image
+                  src={spotlight.image}
+                  alt={spotlight.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 22rem"
+                  className={styles.spotlightImage}
+                />
+              </div>
+              <div className={styles.spotlightBody}>
+                <h2 className={styles.spotlightName}>{spotlight.name}</h2>
+              </div>
+            </Link>
+          </aside>
+        ) : null}
       </div>
 
       <div className={styles.controls}>

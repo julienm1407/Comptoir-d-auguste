@@ -8,11 +8,19 @@ import styles from "./ProductCard.module.css";
 
 interface ProductCardProps {
   product: Product;
+  /** Texte court, aligné à gauche — pour carrousels / aperçus */
+  compact?: boolean;
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, compact = false }: ProductCardProps) {
+  const description = compact
+    ? product.description.length > 90
+      ? `${product.description.slice(0, 87).trim()}…`
+      : product.description
+    : product.description;
+
   return (
-    <article className={styles.card}>
+    <article className={[styles.card, compact ? styles.compact : ""].join(" ")}>
       <Link href={`/carte#${product.slug}`} className={styles.media}>
         <Image
           src={product.image}
@@ -31,7 +39,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <h3 className={styles.name}>{product.name}</h3>
           <p className={styles.price}>{formatPrice(product.price)}</p>
         </div>
-        <p className={styles.description}>{product.description}</p>
+        <p className={styles.description}>{description}</p>
         <Button href={ORDER_URL} size="sm" className={styles.cta}>
           Ajouter
         </Button>

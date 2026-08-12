@@ -12,7 +12,7 @@ $products   = ca_products();
 ?>
 <?php get_template_part('template-parts/components/page', 'hero', [
 	'title' => __('La carte', 'comptoir-auguste'),
-	'text'  => __('Une cuisine maison, classée simplement : viandes, poissons, végétarien, épicés et vegan.', 'comptoir-auguste'),
+	'text'  => __('Formules, plats du moment, salades, snacking, desserts et boissons — une cuisine maison, claire et généreuse.', 'comptoir-auguste'),
 ]); ?>
 
 <div class="<?php echo esc_attr(ca_class('page-carte', 'shell')); ?>">
@@ -41,6 +41,11 @@ $products   = ca_products();
 						$products,
 						static fn(array $p): bool => ($p['categorySlug'] ?? '') === $category['slug']
 					));
+					$families = array_values(array_unique(array_filter(array_map(
+						static fn(array $p) => $p['family'] ?? null,
+						$cat_products
+					))));
+					$use_families = count($families) > 1;
 					?>
 					<section
 						id="<?php echo esc_attr($category['slug']); ?>"
@@ -57,7 +62,30 @@ $products   = ca_products();
 							</div>
 						</div>
 
-						<?php if ($cat_products) : ?>
+						<?php if (!$cat_products) : ?>
+							<p class="<?php echo esc_attr(ca_class('page-carte', 'empty')); ?>">
+								<?php esc_html_e('Les plats de cette catégorie seront ajoutés prochainement.', 'comptoir-auguste'); ?>
+							</p>
+						<?php elseif ($use_families) : ?>
+							<?php foreach ($families as $family) : ?>
+								<?php
+								$family_products = array_values(array_filter(
+									$cat_products,
+									static fn(array $p): bool => ($p['family'] ?? '') === $family
+								));
+								?>
+								<div class="<?php echo esc_attr(ca_class('page-carte', 'family')); ?>">
+									<h3 class="<?php echo esc_attr(ca_class('page-carte', 'familyTitle')); ?>"><?php echo esc_html($family); ?></h3>
+									<div class="<?php echo esc_attr(ca_class('page-carte', 'grid')); ?>">
+										<?php foreach ($family_products as $product) : ?>
+											<div id="<?php echo esc_attr($product['slug']); ?>">
+												<?php get_template_part('template-parts/components/product', 'card', ['product' => $product]); ?>
+											</div>
+										<?php endforeach; ?>
+									</div>
+								</div>
+							<?php endforeach; ?>
+						<?php else : ?>
 							<div class="<?php echo esc_attr(ca_class('page-carte', 'grid')); ?>">
 								<?php foreach ($cat_products as $product) : ?>
 									<div id="<?php echo esc_attr($product['slug']); ?>">
@@ -65,10 +93,6 @@ $products   = ca_products();
 									</div>
 								<?php endforeach; ?>
 							</div>
-						<?php else : ?>
-							<p class="<?php echo esc_attr(ca_class('page-carte', 'empty')); ?>">
-								<?php esc_html_e('Les plats de cette catégorie seront ajoutés prochainement.', 'comptoir-auguste'); ?>
-							</p>
 						<?php endif; ?>
 					</section>
 				<?php endforeach; ?>
