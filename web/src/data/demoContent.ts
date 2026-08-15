@@ -1,5 +1,4 @@
 import type { DeliveryOption, OpeningHour, Review } from "@/types";
-import { ORDER_URL } from "@/config/site";
 
 /**
  * DEMO DATA — replace with Custom Fields / Options (WordPress).
@@ -10,6 +9,17 @@ export const openingHours: OpeningHour[] = [
   { day: "Mercredi", hours: "8h00 – 16h00" },
   { day: "Jeudi", hours: "8h00 – 16h00" },
   { day: "Vendredi", hours: "8h00 – 16h00" },
+  { day: "Samedi", hours: "", closed: true },
+  { day: "Dimanche", hours: "", closed: true },
+];
+
+/** Horaires de retrait click & collect (différents du restaurant) */
+export const takeawayHours: OpeningHour[] = [
+  { day: "Lundi", hours: "10h30 – 15h00" },
+  { day: "Mardi", hours: "10h30 – 15h00" },
+  { day: "Mercredi", hours: "10h30 – 15h00" },
+  { day: "Jeudi", hours: "10h30 – 15h00" },
+  { day: "Vendredi", hours: "10h30 – 15h00" },
   { day: "Samedi", hours: "", closed: true },
   { day: "Dimanche", hours: "", closed: true },
 ];
@@ -33,7 +43,6 @@ export const deliveryOptions: DeliveryOption[] = [
     id: "dine-in",
     label: "Sur place",
     shortDescription: "Prenez le temps de vous installer.",
-    href: ORDER_URL,
     icon: "dine-in",
   },
 ];

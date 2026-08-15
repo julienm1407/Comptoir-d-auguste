@@ -66,7 +66,8 @@ export interface DeliveryOption {
   id: string;
   label: string;
   shortDescription: string;
-  href: string;
+  /** Empty / omitted = non-clickable info card (ex. Sur place) */
+  href?: string;
   icon: "delivery" | "takeaway" | "dine-in";
 }
 

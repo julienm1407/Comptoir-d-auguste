@@ -1,9 +1,11 @@
 /**
- * Order / WooCommerce URLs — replace with real WooCommerce endpoints.
+ * Showcase site: browsing only. "Commander" redirects to Foxorder (external).
+ * Set NEXT_PUBLIC_ORDER_URL in .env.local to the real Foxorder URL.
  */
-export const ORDER_URL = process.env.NEXT_PUBLIC_ORDER_URL ?? "/carte";
-export const CART_URL = process.env.NEXT_PUBLIC_CART_URL ?? "#panier";
-export const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL ?? "#commande";
+export const ORDER_URL =
+  process.env.NEXT_PUBLIC_ORDER_URL ?? "https://votre-restaurant.foxorder.fr";
+export const CART_URL = process.env.NEXT_PUBLIC_CART_URL ?? ORDER_URL;
+export const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL ?? ORDER_URL;
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://comptoirdauguste.fr";

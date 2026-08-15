@@ -6,7 +6,8 @@
 }
 
 .inner {
-  width: 100%;
+  /* keep layout hooks only — do not set width (breaks .container gutters) */
+  min-width: 0;
 }
 
 .carousel {

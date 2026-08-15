@@ -1,6 +1,4 @@
-import { OrderCTA } from "@/components/OrderCTA";
 import { BrandDna } from "@/sections/BrandDna";
-import { DeliveryHome } from "@/sections/DeliveryHome";
 import { FeaturedDishes } from "@/sections/FeaturedDishes";
 import { Hero } from "@/sections/Hero";
 import { Location } from "@/sections/Location";
@@ -17,10 +15,6 @@ export default function HomePage() {
       <FeaturedDishes />
       <BrandDna />
       <Reviews />
-      <DeliveryHome />
-      <div className="container section--tight">
-        <OrderCTA tone="blue" />
-      </div>
       <Location />
     </>
   );

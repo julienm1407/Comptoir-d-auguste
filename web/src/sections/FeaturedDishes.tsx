@@ -71,7 +71,6 @@ export function FeaturedDishes() {
             <SectionTitle
               eyebrow="À découvrir"
               title="Les plats du moment"
-              text="Les suggestions du jour — texte court, carte complète juste à côté."
             />
           </Reveal>
 

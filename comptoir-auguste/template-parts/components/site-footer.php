@@ -6,7 +6,6 @@
  */
 
 $restaurant = ca_restaurant();
-$hours      = ca_opening_hours();
 $footer_nav = ca_footer_nav();
 $footer_order = ca_footer_order();
 $year = (int) gmdate('Y');
@@ -67,9 +66,6 @@ $year = (int) gmdate('Y');
 					<li><?php echo esc_html($restaurant['address']); ?></li>
 					<li><?php echo esc_html($restaurant['phone']); ?></li>
 					<li><a href="mailto:<?php echo esc_attr($restaurant['email']); ?>"><?php echo esc_html($restaurant['email']); ?></a></li>
-					<li class="<?php echo esc_attr(ca_class('Footer', 'hoursPreview')); ?>">
-						<?php echo esc_html($hours[0]['day'] . ' — ' . $hours[0]['hours']); ?>
-					</li>
 				</ul>
 			</div>
 			<div>

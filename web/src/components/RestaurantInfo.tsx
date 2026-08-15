@@ -1,3 +1,4 @@
+import type { OpeningHour } from "@/types";
 import { demoRestaurant } from "@/data/demoRestaurant";
 import { openingHours } from "@/data/demoContent";
 import styles from "./RestaurantInfo.module.css";
@@ -28,12 +29,18 @@ export function RestaurantInfo() {
   );
 }
 
-export function OpeningHours() {
+export function OpeningHours({
+  title = "Horaires",
+  hours = openingHours,
+}: {
+  title?: string | null;
+  hours?: OpeningHour[];
+}) {
   return (
     <div className={styles.hours}>
-      <h3 className={styles.label}>Horaires</h3>
+      {title ? <h3 className={styles.label}>{title}</h3> : null}
       <ul className={styles.list}>
-        {openingHours.map((item) => (
+        {hours.map((item) => (
           <li key={item.day} className={styles.row}>
             <span>{item.day}</span>
             <span>{item.closed ? "Fermé" : item.hours}</span>

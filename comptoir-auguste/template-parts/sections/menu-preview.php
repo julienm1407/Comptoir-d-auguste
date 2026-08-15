@@ -18,12 +18,12 @@ $categories = ca_home_categories();
 			<div class="container <?php echo esc_attr(ca_class('MenuPreview', 'inner')); ?>">
 				<div class="<?php echo esc_attr(ca_class('MenuPreview', 'header')); ?>">
 					<div class="reveal">
-						<div class="<?php echo esc_attr(ca_class('SectionTitle', 'root', 'left', 'dark')); ?>">
+						<div class="<?php echo esc_attr(ca_class('SectionTitle', 'root', 'left', 'dark') . ' ' . ca_class('MenuPreview', 'heading')); ?>">
 							<h2 id="menu-preview-title" class="<?php echo esc_attr(ca_class('SectionTitle', 'title')); ?>">
 								<?php esc_html_e('La cuisine d’Auguste', 'comptoir-auguste'); ?>
 							</h2>
 							<p class="<?php echo esc_attr(ca_class('SectionTitle', 'text')); ?>">
-								<?php esc_html_e('Formules, entrées, plats du moment, salades, snacking et desserts — plus les boissons sur la carte complète.', 'comptoir-auguste'); ?>
+								<?php esc_html_e('Formules, entrées, plats du moment, salades, snacking, desserts et boissons.', 'comptoir-auguste'); ?>
 							</p>
 						</div>
 					</div>
@@ -42,7 +42,6 @@ $categories = ca_home_categories();
 								</div>
 								<div class="<?php echo esc_attr(ca_class('CategoryCard', 'content')); ?>">
 									<h3 class="<?php echo esc_attr(ca_class('CategoryCard', 'name')); ?>"><?php echo esc_html($category['name']); ?></h3>
-									<p class="<?php echo esc_attr(ca_class('CategoryCard', 'description')); ?>"><?php echo esc_html($category['description']); ?></p>
 								</div>
 							</a>
 						</div>

@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/types";
-import { ORDER_URL } from "@/config/site";
 import { badgeLabels, formatPrice } from "@/utils/format";
-import { Button } from "./Button";
 import styles from "./ProductCard.module.css";
 
 interface ProductCardProps {
@@ -40,9 +38,6 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
           <p className={styles.price}>{formatPrice(product.price)}</p>
         </div>
         <p className={styles.description}>{description}</p>
-        <Button href={ORDER_URL} size="sm" className={styles.cta}>
-          Ajouter
-        </Button>
       </div>
     </article>
   );

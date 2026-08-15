@@ -1,34 +1,34 @@
 .frame {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) min(100%, var(--container)) minmax(0, 1fr);
-  align-items: stretch;
-  gap: 0;
   isolation: isolate;
+  width: 100%;
 }
 
 .content {
   position: relative;
   z-index: 2;
-  grid-column: 2;
   width: 100%;
   min-width: 0;
 }
 
 .gutterLeft,
 .gutterRight {
-  position: relative;
+  display: none;
+  position: absolute;
   z-index: 1;
-  min-height: 100%;
+  top: 0;
+  bottom: 0;
+  width: min(18vw, 14rem);
   pointer-events: none;
+  overflow: visible;
 }
 
 .gutterLeft {
-  grid-column: 1;
+  left: 0;
 }
 
 .gutterRight {
-  grid-column: 3;
+  right: 0;
 }
 
 .leftPiece,
@@ -43,62 +43,64 @@
 .leftPiece {
   right: 0;
   top: 50%;
-  width: clamp(11rem, 16vw, 18rem);
-  transform: translate(28%, -50%);
+  width: clamp(9rem, 12vw, 15rem);
+  transform: translate(12%, -50%);
 }
 
 .rightPiece {
   left: 0;
   top: 50%;
-  width: clamp(10rem, 14vw, 16rem);
-  transform: translate(-28%, -50%);
+  width: clamp(8rem, 11vw, 14rem);
+  transform: translate(-12%, -50%);
 }
 
 .accentPiece {
   left: 0;
   bottom: 8%;
-  width: clamp(7rem, 10vw, 11rem);
-  transform: translate(-18%, 0);
+  width: clamp(6rem, 9vw, 10rem);
+  transform: translate(-8%, 0);
   opacity: 0.85;
 }
 
 .corners .leftPiece {
   top: auto;
-  bottom: 6%;
-  transform: translate(22%, 0);
+  bottom: 8%;
+  width: clamp(8rem, 11vw, 13rem);
+  transform: translate(6%, 0);
 }
 
 .corners .rightPiece {
-  top: 6%;
-  transform: translate(-22%, 0);
+  top: 8%;
+  width: clamp(7.5rem, 10vw, 12rem);
+  transform: translate(-6%, 0);
 }
 
 .dense .leftPiece {
-  width: clamp(12rem, 18vw, 20rem);
-  transform: translate(32%, -46%);
+  width: clamp(10rem, 13vw, 16rem);
+  transform: translate(16%, -46%);
 }
 
 .dense .rightPiece {
-  width: clamp(11rem, 16vw, 18rem);
-  transform: translate(-32%, -54%);
+  width: clamp(9rem, 12vw, 15rem);
+  transform: translate(-16%, -54%);
 }
 
 /* Stay mostly in side gutters — avoid covering cards */
 .soft .leftPiece {
-  right: 0;
-  left: auto;
+  right: auto;
+  left: 0;
   top: 34%;
-  width: clamp(6.5rem, 8.5vw, 10.5rem);
-  transform: translate(-58%, -50%);
+  width: clamp(6rem, 8vw, 10rem);
+  transform: translate(-20%, -50%);
   opacity: 0.9;
 }
 
 .soft .rightPiece {
-  left: 0;
-  right: auto;
+  left: auto;
+  right: 0;
   top: 64%;
-  width: clamp(6rem, 8vw, 9.5rem);
-  transform: translate(58%, -50%);
+  width: clamp(5.5rem, 7.5vw, 9rem);
+  transform: translate(20%, -50%);
   opacity: 0.9;
 }
 
@@ -106,61 +108,61 @@
   display: none;
 }
 
-@media (max-width: 1023px) {
-  .frame {
-    grid-template-columns: 1fr;
-  }
+.bleed .leftPiece {
+  transform: translate(4%, -50%);
+}
 
+.bleed .rightPiece {
+  transform: translate(-4%, -50%);
+}
+
+@media (min-width: 1024px) {
   .gutterLeft,
   .gutterRight {
-    display: none;
-  }
-
-  .content {
-    grid-column: 1;
+    display: block;
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .leftPiece {
-    width: clamp(9rem, 13vw, 14rem);
-    transform: translate(18%, -50%);
+  .gutterLeft,
+  .gutterRight {
+    width: min(14vw, 10rem);
   }
 
+  .leftPiece,
   .rightPiece {
-    width: clamp(8rem, 12vw, 13rem);
-    transform: translate(-18%, -50%);
+    width: clamp(6.5rem, 9vw, 10rem);
   }
 
   .accentPiece {
     display: none;
   }
 
-  .soft .leftPiece {
-    width: clamp(5.5rem, 7.5vw, 8.5rem);
-    transform: translate(-62%, -50%);
-  }
-
-  .soft .rightPiece {
-    width: clamp(5rem, 7vw, 8rem);
-    transform: translate(62%, -50%);
+  .corners .leftPiece,
+  .corners .rightPiece {
+    width: clamp(6rem, 8.5vw, 9.5rem);
   }
 }
 
 @media (min-width: 1440px) {
+  .gutterLeft,
+  .gutterRight {
+    width: min(20vw, 16rem);
+  }
+
   .leftPiece {
-    width: clamp(13rem, 17vw, 22rem);
+    width: clamp(11rem, 13vw, 17rem);
   }
 
   .rightPiece {
-    width: clamp(12rem, 15vw, 20rem);
+    width: clamp(10rem, 12vw, 16rem);
   }
 
-  .soft .leftPiece {
-    width: clamp(8rem, 10vw, 12rem);
+  .corners .leftPiece {
+    width: clamp(10rem, 12vw, 15rem);
   }
 
-  .soft .rightPiece {
-    width: clamp(7.5rem, 9vw, 11rem);
+  .corners .rightPiece {
+    width: clamp(9rem, 11vw, 14rem);
   }
 }

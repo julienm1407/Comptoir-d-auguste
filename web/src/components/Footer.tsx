@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FOOTER_NAV, FOOTER_ORDER } from "@/config/site";
 import { demoRestaurant } from "@/data/demoRestaurant";
-import { openingHours } from "@/data/demoContent";
 import styles from "./Footer.module.css";
 
 export function Footer() {
@@ -68,9 +67,6 @@ export function Footer() {
               <li>{demoRestaurant.phone}</li>
               <li>
                 <a href={`mailto:${demoRestaurant.email}`}>{demoRestaurant.email}</a>
-              </li>
-              <li className={styles.hoursPreview}>
-                {openingHours[0]?.day} — {openingHours[0]?.hours}
               </li>
             </ul>
           </div>

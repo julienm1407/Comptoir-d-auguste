@@ -2,7 +2,9 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  min-height: var(--header-h);
   height: var(--header-h);
+  overflow: visible;
   background: rgba(255, 255, 255, 0.92);
   color: var(--color-dark);
   backdrop-filter: blur(14px);
@@ -31,9 +33,9 @@
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  width: 4.25rem;
-  height: 4.25rem;
-  padding: 0.25rem;
+  width: 3.35rem;
+  height: 3.35rem;
+  padding: 0.15rem;
   overflow: hidden;
   background: #f7f4ee;
   border: 1px solid rgba(177, 140, 83, 0.35);
@@ -128,18 +130,22 @@
 .mobilePanel {
   position: fixed;
   inset: var(--header-h) 0 0 0;
-  background: var(--color-white);
+  z-index: 250;
+  background: #ffffff;
   color: var(--color-dark);
   padding: var(--space-6) var(--gutter) calc(var(--mobile-order-h) + env(safe-area-inset-bottom) + var(--space-6));
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity var(--duration) var(--ease-out), visibility var(--duration) var(--ease-out);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobileOpen {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .mobileNav {
@@ -153,6 +159,7 @@
   border-bottom: 1px solid var(--color-border);
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 5vw, 1.75rem);
+  color: var(--color-dark);
 }
 
 .mobileOrder {
@@ -161,26 +168,22 @@
 
 @media (min-width: 430px) {
   .logo {
-    width: 4.5rem;
-    height: 4.5rem;
-  }
-
-  .mobileCta {
-    display: inline-flex;
+    width: 3.65rem;
+    height: 3.65rem;
   }
 }
 
 @media (min-width: 768px) {
   .logo {
-    width: 4.85rem;
-    height: 4.85rem;
+    width: 4rem;
+    height: 4rem;
   }
 }
 
 @media (min-width: 1024px) {
   .logo {
-    width: 5.25rem;
-    height: 5.25rem;
+    width: 4.35rem;
+    height: 4.35rem;
   }
 
   .nav {

@@ -33,9 +33,12 @@ $r     = ca_restaurant();
 			<strong><?php esc_html_e('Adresse', 'comptoir-auguste'); ?></strong><br>
 			<?php echo esc_html($r['address']); ?>
 		</p>
-		<?php get_template_part('template-parts/components/opening', 'hours'); ?>
+		<?php get_template_part('template-parts/components/opening', 'hours', [
+			'title' => '',
+			'hours' => ca_takeaway_hours(),
+		]); ?>
 		<p class="<?php echo esc_attr(ca_class('page-a-emporter', 'note')); ?>">
-			<?php esc_html_e('Horaires et modalités de retrait à confirmer.', 'comptoir-auguste'); ?>
+			<?php esc_html_e('Retrait possible aux horaires indiqués — modalités à confirmer à la commande.', 'comptoir-auguste'); ?>
 		</p>
 		<a class="<?php echo esc_attr(ca_class('Button', 'button', 'primary', 'lg')); ?>" href="<?php echo esc_url(ca_order_url()); ?>">
 			<?php esc_html_e('Commander', 'comptoir-auguste'); ?>

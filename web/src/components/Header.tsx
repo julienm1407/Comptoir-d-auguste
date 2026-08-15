@@ -51,9 +51,6 @@ export function Header() {
           <Button href={ORDER_URL} size="sm" className={styles.desktopCta}>
             Commander
           </Button>
-          <Button href={ORDER_URL} size="sm" className={styles.mobileCta}>
-            Commander
-          </Button>
           <button
             type="button"
             className={[styles.menuButton, open ? styles.menuOpen : ""].join(" ")}

@@ -21,7 +21,6 @@ export function CategoryCard({ category }: CategoryCardProps) {
       </div>
       <div className={styles.content}>
         <h3 className={styles.name}>{category.name}</h3>
-        <p className={styles.description}>{category.description}</p>
       </div>
     </Link>
   );

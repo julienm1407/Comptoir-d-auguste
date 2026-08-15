@@ -32,9 +32,6 @@ $order = ca_order_url();
 			<a class="<?php echo esc_attr(ca_class('Button', 'button', 'primary', 'sm') . ' ' . ca_class('Header', 'desktopCta')); ?>" href="<?php echo esc_url($order); ?>">
 				<?php esc_html_e('Commander', 'comptoir-auguste'); ?>
 			</a>
-			<a class="<?php echo esc_attr(ca_class('Button', 'button', 'primary', 'sm') . ' ' . ca_class('Header', 'mobileCta')); ?>" href="<?php echo esc_url($order); ?>">
-				<?php esc_html_e('Commander', 'comptoir-auguste'); ?>
-			</a>
 			<button
 				type="button"
 				class="<?php echo esc_attr(ca_class('Header', 'menuButton')); ?>"

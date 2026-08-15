@@ -96,11 +96,6 @@
   overflow: hidden;
 }
 
-.cta {
-  justify-self: start;
-  margin-top: var(--space-1);
-}
-
 @media (min-width: 768px) {
   .body {
     padding: var(--space-5);

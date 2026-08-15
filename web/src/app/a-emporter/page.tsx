@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ORDER_URL } from "@/config/site";
-import { takeawaySteps } from "@/data/demoContent";
+import { takeawayHours, takeawaySteps } from "@/data/demoContent";
 import { demoRestaurant } from "@/data/demoRestaurant";
 import { Button } from "@/components/Button";
 import { OpeningHours } from "@/components/RestaurantInfo";
@@ -41,9 +41,9 @@ export default function AEmporterPage() {
             <br />
             {demoRestaurant.address.full}
           </p>
-          <OpeningHours />
+          <OpeningHours title={null} hours={takeawayHours} />
           <p className={styles.note}>
-            Horaires et modalités de retrait à confirmer.
+            Retrait possible aux horaires indiqués — modalités à confirmer à la commande.
           </p>
           <Button href={ORDER_URL} size="lg">
             Commander

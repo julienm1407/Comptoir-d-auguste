@@ -58,6 +58,20 @@ function ca_opening_hours(): array
     ];
 }
 
+/** Horaires de retrait click & collect (différents du restaurant). */
+function ca_takeaway_hours(): array
+{
+    return [
+        ['day' => 'Lundi', 'hours' => '10h30 – 15h00'],
+        ['day' => 'Mardi', 'hours' => '10h30 – 15h00'],
+        ['day' => 'Mercredi', 'hours' => '10h30 – 15h00'],
+        ['day' => 'Jeudi', 'hours' => '10h30 – 15h00'],
+        ['day' => 'Vendredi', 'hours' => '10h30 – 15h00'],
+        ['day' => 'Samedi', 'hours' => 'Fermé'],
+        ['day' => 'Dimanche', 'hours' => 'Fermé'],
+    ];
+}
+
 function ca_delivery_options(): array
 {
     return [
@@ -65,16 +79,19 @@ function ca_delivery_options(): array
             'label' => 'Livraison',
             'text'  => 'On vient à vous.',
             'href'  => ca_page_url('livraison'),
+            'icon'  => 'delivery',
         ],
         [
             'label' => 'À emporter',
             'text'  => 'Vous commandez, on prépare.',
             'href'  => ca_page_url('a-emporter'),
+            'icon'  => 'takeaway',
         ],
         [
             'label' => 'Sur place',
             'text'  => 'Prenez le temps de vous installer.',
-            'href'  => ca_order_url(),
+            'href'  => '',
+            'icon'  => 'dine-in',
         ],
     ];
 }

@@ -13,6 +13,7 @@
   ready(function () {
     initHeader();
     initHeroCarousel();
+    initFeaturedCarousel();
     initReveal();
     initContactForm();
   });
@@ -100,6 +101,99 @@
     root.addEventListener("mouseleave", function () { paused = false; });
 
     goTo(0);
+    start();
+  }
+
+  function initFeaturedCarousel() {
+    var root = document.querySelector("[data-ca-featured]");
+    if (!root) return;
+
+    var track = root.querySelector("[data-ca-featured-track]");
+    var slides = Array.prototype.slice.call(root.querySelectorAll("[data-ca-featured-slide]"));
+    var controls = root.querySelector("[data-ca-featured-controls]");
+    var dotsWrap = root.querySelector("[data-ca-featured-dots]");
+    var prev = root.querySelector("[data-ca-featured-prev]");
+    var next = root.querySelector("[data-ca-featured-next]");
+    if (!track || !slides.length) return;
+
+    var index = 0;
+    var visible = 3;
+    var timer = null;
+
+    function visibleCount() {
+      if (window.matchMedia("(max-width: 767px)").matches) return 1;
+      if (window.matchMedia("(max-width: 1023px)").matches) return 2;
+      return 3;
+    }
+
+    function maxIndex() {
+      return Math.max(0, slides.length - visible);
+    }
+
+    function renderDots() {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = "";
+      var pages = maxIndex() + 1;
+      for (var i = 0; i < pages; i++) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.setAttribute("role", "tab");
+        btn.setAttribute("aria-label", "Page " + (i + 1));
+        btn.className = "ca-FeaturedDishes-dot" + (i === index ? " ca-FeaturedDishes-dotActive" : "");
+        btn.setAttribute("aria-selected", i === index ? "true" : "false");
+        (function (n) {
+          btn.addEventListener("click", function () {
+            goTo(n);
+            start();
+          });
+        })(i);
+        dotsWrap.appendChild(btn);
+      }
+    }
+
+    function render() {
+      visible = visibleCount();
+      if (track) track.setAttribute("data-count", String(visible));
+      if (index > maxIndex()) index = maxIndex();
+
+      slides.forEach(function (slide, n) {
+        var show = n >= index && n < index + visible;
+        slide.hidden = !show;
+      });
+
+      if (controls) {
+        controls.hidden = slides.length <= visible;
+      }
+      renderDots();
+    }
+
+    function goTo(i) {
+      var total = maxIndex() + 1;
+      index = ((i % total) + total) % total;
+      render();
+    }
+
+    function start() {
+      stop();
+      if (slides.length <= visibleCount()) return;
+      timer = window.setInterval(function () {
+        goTo(index + 1);
+      }, 5200);
+    }
+
+    function stop() {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    }
+
+    if (prev) prev.addEventListener("click", function () { goTo(index - 1); start(); });
+    if (next) next.addEventListener("click", function () { goTo(index + 1); start(); });
+    window.addEventListener("resize", function () {
+      render();
+      start();
+    });
+
+    render();
     start();
   }
 

@@ -1,9 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ORDER_URL } from "@/config/site";
 import { deliveryOptions } from "@/data/demoContent";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
-import { SectionTitle } from "@/components/SectionTitle";
 import styles from "./OrderModes.module.css";
 
 const icons = {
@@ -108,35 +108,69 @@ const icons = {
   ),
 } as const;
 
+function ModeCard({
+  option,
+}: {
+  option: (typeof deliveryOptions)[number];
+}) {
+  const className = [styles.card, styles[`tone-${option.icon}`]].join(" ");
+  const body = (
+    <>
+      <span className={styles.icon} aria-hidden>
+        {icons[option.icon as keyof typeof icons]}
+      </span>
+      <div className={styles.copy}>
+        <h3 className={styles.name}>{option.label}</h3>
+        <p className={styles.text}>{option.shortDescription}</p>
+      </div>
+      <span className={styles.accent} aria-hidden />
+    </>
+  );
+
+  if (!option.href) {
+    return (
+      <div className={[className, styles.static].join(" ")} aria-label={option.label}>
+        {body}
+      </div>
+    );
+  }
+
+  return (
+    <Link href={option.href} className={className}>
+      {body}
+    </Link>
+  );
+}
+
 export function OrderModes() {
   return (
     <section className={`section ${styles.section}`} aria-labelledby="order-modes-title">
       <div className="container">
-        <Reveal>
-          <SectionTitle
-            title="Comment voulez-vous profiter d’Auguste ?"
-            as="h2"
-            align="center"
-            className={styles.title}
-          />
-        </Reveal>
+        <div className={styles.top}>
+          <Reveal className={styles.intro}>
+            <h2 id="order-modes-title" className={styles.heading}>
+              Comment voulez-vous
+              <br />
+              profiter d’Auguste&nbsp;?
+            </h2>
+          </Reveal>
+
+          <Reveal className={styles.visual}>
+            <Image
+              src="/brand/scooter-mosaique.png"
+              alt="Livraison Comptoir d’Auguste — illustration mosaïque"
+              width={720}
+              height={720}
+              className={styles.scooter}
+              priority={false}
+            />
+          </Reveal>
+        </div>
 
         <div className={styles.grid}>
           {deliveryOptions.map((option) => (
             <Reveal key={option.id}>
-              <Link
-                href={option.href}
-                className={[styles.card, styles[`tone-${option.icon}`]].join(" ")}
-              >
-                <span className={styles.icon} aria-hidden>
-                  {icons[option.icon as keyof typeof icons]}
-                </span>
-                <div className={styles.copy}>
-                  <h3 className={styles.name}>{option.label}</h3>
-                  <p className={styles.text}>{option.shortDescription}</p>
-                </div>
-                <span className={styles.accent} aria-hidden />
-              </Link>
+              <ModeCard option={option} />
             </Reveal>
           ))}
         </div>
