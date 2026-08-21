@@ -10,7 +10,7 @@ export const demoCategories: Category[] = [
     id: "cat-formules",
     slug: "formules",
     name: "Formules",
-    description: "Composez votre repas : entrée, plat et dessert au meilleur prix.",
+    description: "Composez votre repas : entrée, plat et dessert.",
     mosaic: "/brand/rameaux-olivier.png",
     showOnHome: true,
   },

@@ -1076,13 +1076,6 @@ button {
   text-wrap: balance;
 }
 
-.ca-ProductCard-price {
-  color: var(--color-bronze);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: var(--text-base);
-}
-
 .ca-ProductCard-description {
   color: var(--color-muted);
   font-family: var(--font-body);
@@ -3815,13 +3808,6 @@ a.ca-OrderModes-tone-dine-in:hover {
   letter-spacing: 0.01em;
   color: var(--color-dark);
   text-wrap: balance;
-}
-
-.ca-ProductCard-price {
-  color: var(--color-bronze);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: var(--text-base);
 }
 
 .ca-ProductCard-description {

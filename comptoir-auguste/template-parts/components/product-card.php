@@ -40,7 +40,6 @@ $classes = ca_class('ProductCard', 'card') . ($compact ? ' ' . ca_class('Product
 	<div class="<?php echo esc_attr(ca_class('ProductCard', 'body')); ?>">
 		<div class="<?php echo esc_attr(ca_class('ProductCard', 'top')); ?>">
 			<h3 class="<?php echo esc_attr(ca_class('ProductCard', 'name')); ?>"><?php echo esc_html($product['name']); ?></h3>
-			<p class="<?php echo esc_attr(ca_class('ProductCard', 'price')); ?>"><?php echo esc_html(ca_format_price((float) $product['price'])); ?></p>
 		</div>
 		<p class="<?php echo esc_attr(ca_class('ProductCard', 'description')); ?>"><?php echo esc_html($desc); ?></p>
 	</div>

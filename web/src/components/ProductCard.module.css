@@ -65,13 +65,6 @@
   text-wrap: balance;
 }
 
-.price {
-  color: var(--color-bronze);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: var(--text-base);
-}
-
 .description {
   color: var(--color-muted);
   font-family: var(--font-body);

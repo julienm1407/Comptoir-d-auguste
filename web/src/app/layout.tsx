@@ -57,7 +57,6 @@ const restaurantSchema = {
   servesCuisine: ["Provençal", "Méditerranéenne", "Cuisine maison"],
   url: SITE_URL,
   image: `${SITE_URL}/brand/logo-principal.png`,
-  priceRange: "€€",
   acceptsReservations: false,
 };
 

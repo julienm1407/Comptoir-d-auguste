@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/types";
-import { badgeLabels, formatPrice } from "@/utils/format";
+import { badgeLabels } from "@/utils/format";
 import styles from "./ProductCard.module.css";
 
 interface ProductCardProps {
@@ -35,7 +35,6 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
       <div className={styles.body}>
         <div className={styles.top}>
           <h3 className={styles.name}>{product.name}</h3>
-          <p className={styles.price}>{formatPrice(product.price)}</p>
         </div>
         <p className={styles.description}>{description}</p>
       </div>

@@ -18,7 +18,7 @@ function ca_categories(): array
         [
             'slug'        => 'formules',
             'name'        => 'Formules',
-            'description' => 'Composez votre repas : entrée, plat et dessert au meilleur prix.',
+            'description' => 'Composez votre repas : entrée, plat et dessert.',
             'mosaic'      => 'rameaux-olivier.png',
             'showOnHome'  => true,
         ],
