@@ -55,6 +55,14 @@ function ca_order_url(): string
 }
 
 /**
+ * Uber Eats store URL.
+ */
+function ca_uber_eats_url(): string
+{
+    return (string) apply_filters('ca_uber_eats_url', CA_UBER_EATS_URL);
+}
+
+/**
  * Internal page URL by slug (falls back to home + slug).
  */
 function ca_page_url(string $slug): string

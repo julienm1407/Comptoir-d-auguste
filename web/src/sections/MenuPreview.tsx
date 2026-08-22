@@ -19,7 +19,7 @@ export function MenuPreview() {
             <Reveal>
               <SectionTitle
                 title="La cuisine d’Auguste"
-                text="Formules, entrées, plats du moment, salades, snacking, desserts et boissons."
+                text="Découvrez nos univers — la carte complète est à la commande."
                 className={styles.heading}
               />
             </Reveal>

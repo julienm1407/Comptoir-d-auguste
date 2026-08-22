@@ -4,6 +4,7 @@ import { ORDER_URL } from "@/config/site";
 import { deliveryOptions } from "@/data/demoContent";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
+import { UberEatsButton } from "@/components/UberEatsButton";
 import styles from "./OrderModes.module.css";
 
 const icons = {
@@ -179,6 +180,7 @@ export function OrderModes() {
           <Button href={ORDER_URL} size="lg">
             Commander
           </Button>
+          <UberEatsButton />
         </Reveal>
       </div>
     </section>

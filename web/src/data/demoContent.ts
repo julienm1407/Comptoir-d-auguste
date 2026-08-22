@@ -28,7 +28,7 @@ export const deliveryOptions: DeliveryOption[] = [
   {
     id: "delivery",
     label: "Livraison",
-    shortDescription: "On vient à vous.",
+    shortDescription: "Chez vous, ou via Uber Eats.",
     href: "/livraison",
     icon: "delivery",
   },

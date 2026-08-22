@@ -82,6 +82,11 @@
   font-style: italic;
 }
 
+.actions {
+  display: grid;
+  gap: var(--space-3);
+}
+
 @media (min-width: 1024px) {
   .page {
     grid-template-columns: 1.2fr 0.8fr;

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { ORDER_URL } from "@/config/site";
-import { demoProducts } from "@/data/demoProducts";
+import { momentShowcaseProducts } from "@/data/demoProducts";
 import { Button } from "@/components/Button";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
@@ -10,8 +10,7 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { SideMosaic } from "@/components/SideMosaic";
 import styles from "./FeaturedDishes.module.css";
 
-const dishes = demoProducts.filter((p) => p.categorySlug === "plats-du-moment");
-
+const dishes = momentShowcaseProducts;
 function useVisibleCount() {
   const [count, setCount] = useState(3);
 
@@ -123,7 +122,7 @@ export function FeaturedDishes() {
           </div>
 
           <Reveal className={styles.actions}>
-            <Button href="/carte#plats-du-moment" variant="ghost">
+            <Button href="/carte" variant="ghost">
               Voir la carte
             </Button>
             <Button href={ORDER_URL}>Commander</Button>

@@ -24,7 +24,9 @@ const modules = [
   { file: "web/src/components/ProductCard.module.css", prefix: "ProductCard" },
   { file: "web/src/components/CategoryCard.module.css", prefix: "CategoryCard" },
   { file: "web/src/components/OrderCTA.module.css", prefix: "OrderCTA" },
+  { file: "web/src/components/UberEatsButton.module.css", prefix: "UberEatsButton" },
   { file: "web/src/components/PageHero.module.css", prefix: "PageHero" },
+  { file: "web/src/app/livraison/page.module.css", prefix: "page-livraison" },
   { file: "web/src/app/notre-histoire/page.module.css", prefix: "page-notre-histoire" },
   { file: "web/src/app/carte/page.module.css", prefix: "page-carte" },
 ];

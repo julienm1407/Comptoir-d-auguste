@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Product } from "@/types";
+import { ORDER_URL } from "@/config/site";
 import { badgeLabels } from "@/utils/format";
 import styles from "./ProductCard.module.css";
 
@@ -19,7 +19,11 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
 
   return (
     <article className={[styles.card, compact ? styles.compact : ""].join(" ")}>
-      <Link href={`/carte#${product.slug}`} className={styles.media}>
+      <a
+        href={ORDER_URL}
+        className={styles.media}
+        aria-label={`Commander — ${product.name}`}
+      >
         <Image
           src={product.image}
           alt={product.name}
@@ -30,7 +34,7 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
         {product.badge ? (
           <span className={styles.badge}>{badgeLabels[product.badge]}</span>
         ) : null}
-      </Link>
+      </a>
 
       <div className={styles.body}>
         <div className={styles.top}>

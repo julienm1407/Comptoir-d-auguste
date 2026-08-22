@@ -3,12 +3,13 @@ import { ORDER_URL } from "@/config/site";
 import { deliverySteps } from "@/data/demoContent";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
+import { UberEatsButton } from "@/components/UberEatsButton";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Livraison",
   description:
-    "Auguste vient à vous. Commandez en ligne et faites-vous livrer une cuisine maison.",
+    "Auguste vient à vous — en livraison directe ou via Uber Eats.",
 };
 
 export default function LivraisonPage() {
@@ -16,7 +17,7 @@ export default function LivraisonPage() {
     <>
       <PageHero
         title="Livraison"
-        text="Auguste vient à vous. Choisissez, commandez, on prépare, on vous livre."
+        text="Auguste vient à vous. Commandez chez nous pour une livraison directe, ou passez par Uber Eats."
       />
 
       <div className={`container section ${styles.page}`}>
@@ -36,28 +37,32 @@ export default function LivraisonPage() {
           <h2>Informations</h2>
           <ul>
             <li>
+              <strong>Modes</strong>
+              <span>Livraison directe ou Uber Eats</span>
+            </li>
+            <li>
               <strong>Zones</strong>
-              <span>À confirmer</span>
+              <span>À confirmer selon le mode</span>
             </li>
             <li>
               <strong>Horaires</strong>
-              <span>À confirmer</span>
-            </li>
-            <li>
-              <strong>Minimum de commande</strong>
-              <span>À confirmer</span>
+              <span>À confirmer selon le mode</span>
             </li>
             <li>
               <strong>Frais de livraison</strong>
-              <span>À confirmer</span>
+              <span>Selon le mode choisi</span>
             </li>
           </ul>
           <p className={styles.note}>
-            Ces informations seront mises à jour dès qu’elles seront définitives.
+            Commandez chez nous pour une livraison directe, ou sur Uber Eats —
+            selon votre préférence.
           </p>
-          <Button href={ORDER_URL} size="lg">
-            Commander
-          </Button>
+          <div className={styles.actions}>
+            <Button href={ORDER_URL} size="lg" fullWidth>
+              Commander (livraison directe)
+            </Button>
+            <UberEatsButton fullWidth />
+          </div>
         </aside>
       </div>
     </>

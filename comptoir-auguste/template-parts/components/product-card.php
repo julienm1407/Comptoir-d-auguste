@@ -24,7 +24,7 @@ if ($compact && mb_strlen($desc) > 90) {
 $classes = ca_class('ProductCard', 'card') . ($compact ? ' ' . ca_class('ProductCard', 'compact') : '');
 ?>
 <article class="<?php echo esc_attr($classes); ?>">
-	<a class="<?php echo esc_attr(ca_class('ProductCard', 'media')); ?>" href="<?php echo esc_url(ca_page_url('carte') . '#' . $product['slug']); ?>">
+	<a class="<?php echo esc_attr(ca_class('ProductCard', 'media')); ?>" href="<?php echo esc_url(ca_order_url()); ?>" aria-label="<?php echo esc_attr(sprintf(/* translators: %s dish name */ __('Commander — %s', 'comptoir-auguste'), $product['name'])); ?>">
 		<img
 			class="<?php echo esc_attr(ca_class('ProductCard', 'image')); ?>"
 			src="<?php echo esc_url($product['image']); ?>"

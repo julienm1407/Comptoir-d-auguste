@@ -71,6 +71,7 @@ $icons = [
 			<a class="<?php echo esc_attr(ca_class('Button', 'button', 'primary', 'lg')); ?>" href="<?php echo esc_url(ca_order_url()); ?>">
 				<?php esc_html_e('Commander', 'comptoir-auguste'); ?>
 			</a>
+			<?php get_template_part('template-parts/components/uber', 'eats-button'); ?>
 		</div>
 	</div>
 </section>

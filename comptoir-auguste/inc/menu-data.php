@@ -758,10 +758,17 @@ function ca_featured_products(): array
 
 function ca_moment_products(): array
 {
-    return array_values(array_filter(
+    $moment = array_values(array_filter(
         ca_products(),
         static fn(array $p): bool => ($p['categorySlug'] ?? '') === 'plats-du-moment'
     ));
+    $featured = array_values(array_filter(
+        $moment,
+        static fn(array $p): bool => !empty($p['featured'])
+    ));
+    $pool = count($featured) >= 3 ? $featured : $moment;
+
+    return array_slice($pool, 0, 6);
 }
 
 function ca_home_categories(): array

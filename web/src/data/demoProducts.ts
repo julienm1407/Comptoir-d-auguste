@@ -755,6 +755,14 @@ export const homeCategories = demoCategories.filter((c) => c.showOnHome);
 
 export const featuredProducts = demoProducts.filter((p) => p.featured);
 
+/** Suggestions home — max 6 plats du moment (featured d’abord). */
+export const momentShowcaseProducts: Product[] = (() => {
+  const moment = demoProducts.filter((p) => p.categorySlug === "plats-du-moment");
+  const featured = moment.filter((p) => p.featured);
+  const pool = featured.length >= 3 ? featured : moment;
+  return pool.slice(0, 6);
+})();
+
 export const dailySpecials = demoProducts.filter(
   (p) => p.badge === "du-jour" || p.badge === "de-saison" || p.featured,
 );

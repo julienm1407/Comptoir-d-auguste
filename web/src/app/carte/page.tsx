@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { demoCategories, demoProducts } from "@/data/demoProducts";
+import { ORDER_URL } from "@/config/site";
+import { demoCategories } from "@/data/demoProducts";
+import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
-import { ProductCard } from "@/components/ProductCard";
 import { OrderCTA } from "@/components/OrderCTA";
 import { SideMosaic } from "@/components/SideMosaic";
+import { UberEatsButton } from "@/components/UberEatsButton";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "La carte",
   description:
-    "Formules, entrées, plats du moment, salades, snacking, desserts et boissons — la carte du Comptoir d’Auguste.",
+    "Formules, entrées, plats du moment, salades, snacking, desserts et boissons — découvrez les univers du Comptoir d’Auguste. La carte complète est à la commande.",
 };
 
 export default function CartePage() {
@@ -18,7 +20,7 @@ export default function CartePage() {
     <>
       <PageHero
         title="La carte"
-        text="Formules, plats du moment, salades, snacking, desserts et boissons — une cuisine maison, claire et généreuse."
+        text="Nos univers culinaires — la carte détaillée et les disponibilités sont à la commande."
       />
 
       <div className={styles.shell}>
@@ -28,81 +30,50 @@ export default function CartePage() {
           variant="dense"
         >
           <div className={`container section ${styles.page}`}>
-            <nav className={styles.anchors} aria-label="Catégories">
+            <p className={styles.lead}>
+              Survolez les familles de plats ci-dessous. Pour commander, les plats
+              du jour et les prix sont sur Fox Order (ou Uber Eats en livraison).
+            </p>
+
+            <div className={styles.grid}>
               {demoCategories.map((category) => (
-                <a key={category.id} href={`#${category.slug}`} className={styles.anchor}>
-                  <span className={styles.anchorIcon}>
-                    <Image src={category.mosaic} alt="" width={28} height={28} />
-                  </span>
-                  <span>{category.name}</span>
-                </a>
-              ))}
-            </nav>
-
-            {demoCategories.map((category) => {
-              const products = demoProducts.filter(
-                (product) => product.categorySlug === category.slug,
-              );
-              const families = [
-                ...new Set(products.map((p) => p.family).filter(Boolean)),
-              ] as string[];
-              const useFamilies = families.length > 1;
-
-              return (
-                <section
+                <article
                   key={category.id}
                   id={category.slug}
                   className={styles.category}
-                  aria-labelledby={`${category.slug}-title`}
                 >
-                  <div className={styles.categoryHeader}>
-                    <span className={styles.categoryMosaic}>
-                      <Image src={category.mosaic} alt="" width={72} height={72} />
-                    </span>
-                    <div>
-                      <h2 id={`${category.slug}-title`}>{category.name}</h2>
-                      <p>{category.description}</p>
-                    </div>
+                  <span className={styles.mosaic} aria-hidden>
+                    <Image
+                      src={category.mosaic}
+                      alt=""
+                      width={96}
+                      height={96}
+                    />
+                  </span>
+                  <div className={styles.copy}>
+                    <h2>{category.name}</h2>
+                    <p>{category.description}</p>
                   </div>
+                </article>
+              ))}
+            </div>
 
-                  {products.length === 0 ? (
-                    <p className={styles.empty}>
-                      Les plats de cette catégorie seront ajoutés prochainement.
-                    </p>
-                  ) : useFamilies ? (
-                    families.map((family) => {
-                      const familyProducts = products.filter((p) => p.family === family);
-                      return (
-                        <div key={family} className={styles.family}>
-                          <h3 className={styles.familyTitle}>{family}</h3>
-                          <div className={styles.grid}>
-                            {familyProducts.map((product) => (
-                              <div key={product.id} id={product.slug}>
-                                <ProductCard product={product} />
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      );
-                    })
-                  ) : (
-                    <div className={styles.grid}>
-                      {products.map((product) => (
-                        <div key={product.id} id={product.slug}>
-                          <ProductCard product={product} />
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </section>
-              );
-            })}
+            <div className={styles.actions}>
+              <Button href={ORDER_URL} size="lg">
+                Voir la carte & commander
+              </Button>
+              <UberEatsButton />
+            </div>
           </div>
         </SideMosaic>
       </div>
 
       <div className="container section--tight">
-        <OrderCTA title="On vous prépare quoi ?" tone="blue" />
+        <OrderCTA
+          title="On vous prépare quoi ?"
+          text="La carte complète est à la commande — frais, du jour, fait maison."
+          tone="blue"
+        />
       </div>
     </>
   );

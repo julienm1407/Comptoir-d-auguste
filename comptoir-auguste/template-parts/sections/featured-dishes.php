@@ -59,7 +59,7 @@ if (empty($products)) {
 				</div>
 
 				<div class="reveal <?php echo esc_attr(ca_class('FeaturedDishes', 'actions')); ?>">
-					<a class="<?php echo esc_attr(ca_class('Button', 'button', 'ghost', 'md')); ?>" href="<?php echo esc_url(ca_page_url('carte') . '#plats-du-moment'); ?>">
+					<a class="<?php echo esc_attr(ca_class('Button', 'button', 'ghost', 'md')); ?>" href="<?php echo esc_url(ca_page_url('carte')); ?>">
 						<?php esc_html_e('Voir la carte', 'comptoir-auguste'); ?>
 					</a>
 					<a class="<?php echo esc_attr(ca_class('Button', 'button', 'primary', 'md')); ?>" href="<?php echo esc_url(ca_order_url()); ?>">

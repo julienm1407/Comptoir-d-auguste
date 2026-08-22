@@ -23,7 +23,7 @@ $categories = ca_home_categories();
 								<?php esc_html_e('La cuisine d’Auguste', 'comptoir-auguste'); ?>
 							</h2>
 							<p class="<?php echo esc_attr(ca_class('SectionTitle', 'text')); ?>">
-								<?php esc_html_e('Formules, entrées, plats du moment, salades, snacking, desserts et boissons.', 'comptoir-auguste'); ?>
+								<?php esc_html_e('Découvrez nos univers — la carte complète est à la commande.', 'comptoir-auguste'); ?>
 							</p>
 						</div>
 					</div>

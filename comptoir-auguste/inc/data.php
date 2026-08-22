@@ -77,7 +77,7 @@ function ca_delivery_options(): array
     return [
         [
             'label' => 'Livraison',
-            'text'  => 'On vient à vous.',
+            'text'  => 'Chez vous, ou via Uber Eats.',
             'href'  => ca_page_url('livraison'),
             'icon'  => 'delivery',
         ],
