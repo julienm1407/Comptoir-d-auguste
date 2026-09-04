@@ -6,7 +6,17 @@
  */
 
 $slides    = ca_hero_slides();
-$spotlight = ca_featured_products()[0] ?? null;
+$featured  = ca_featured_products();
+$spotlight = null;
+foreach ($featured as $product) {
+	if (($product['slug'] ?? '') === 'saute-de-veau-aux-carottes-et-champignons') {
+		$spotlight = $product;
+		break;
+	}
+}
+if ($spotlight === null) {
+	$spotlight = $featured[0] ?? null;
+}
 ?>
 <section class="<?php echo esc_attr(ca_class('Hero', 'hero')); ?>" aria-labelledby="hero-title" data-ca-hero>
 	<div class="<?php echo esc_attr(ca_class('Hero', 'carousel')); ?>" aria-hidden="true">

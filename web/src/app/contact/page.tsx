@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import { demoRestaurant } from "@/data/demoRestaurant";
 import { OpeningHours, RestaurantInfo } from "@/components/RestaurantInfo";
 import { PageHero } from "@/components/PageHero";
-import { ContactForm } from "@/components/ContactForm";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Retrouvez Auguste — adresse, horaires, téléphone et formulaire de contact.",
+  description: "Retrouvez Auguste — adresse, horaires, téléphone et réseaux.",
 };
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero title="Retrouvez Auguste" text="Une question ? Écrivez-nous ou passez nous voir." />
+      <PageHero
+        title="Retrouvez Auguste"
+        text="Adresse, horaires et réseaux — passez nous voir ou contactez-nous."
+      />
 
       <div className={`container section ${styles.page}`}>
         <div className={styles.info}>
@@ -28,19 +30,6 @@ export default function ContactPage() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-
-        <div className={styles.formBlock}>
-          <h2>Une question ?</h2>
-          <p>Le formulaire est prêt pour une future intégration (WordPress / e-mail).</p>
-          <ContactForm />
-        </div>
-
-        <div className={styles.map}>
-          <div className={styles.mapPlaceholder}>
-            <p>Carte à venir</p>
-            <span>Emplacement à confirmer</span>
           </div>
         </div>
       </div>

@@ -4,12 +4,13 @@ import { deliverySteps } from "@/data/demoContent";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { UberEatsButton } from "@/components/UberEatsButton";
+import { DeliverooButton } from "@/components/DeliverooButton";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Livraison",
   description:
-    "Auguste vient à vous — en livraison directe ou via Uber Eats.",
+    "Auguste vient à vous — en livraison directe, Uber Eats ou Deliveroo.",
 };
 
 export default function LivraisonPage() {
@@ -17,7 +18,7 @@ export default function LivraisonPage() {
     <>
       <PageHero
         title="Livraison"
-        text="Auguste vient à vous. Commandez chez nous pour une livraison directe, ou passez par Uber Eats."
+        text="Auguste vient à vous. Commandez chez nous pour une livraison directe, ou passez par Uber Eats / Deliveroo."
       />
 
       <div className={`container section ${styles.page}`}>
@@ -38,7 +39,7 @@ export default function LivraisonPage() {
           <ul>
             <li>
               <strong>Modes</strong>
-              <span>Livraison directe ou Uber Eats</span>
+              <span>Livraison directe, Uber Eats ou Deliveroo</span>
             </li>
             <li>
               <strong>Zones</strong>
@@ -54,14 +55,15 @@ export default function LivraisonPage() {
             </li>
           </ul>
           <p className={styles.note}>
-            Commandez chez nous pour une livraison directe, ou sur Uber Eats —
-            selon votre préférence.
+            Commandez chez nous pour une livraison directe, ou via Uber Eats /
+            Deliveroo — selon votre préférence.
           </p>
           <div className={styles.actions}>
             <Button href={ORDER_URL} size="lg" fullWidth>
               Commander (livraison directe)
             </Button>
             <UberEatsButton fullWidth />
+            <DeliverooButton fullWidth />
           </div>
         </aside>
       </div>

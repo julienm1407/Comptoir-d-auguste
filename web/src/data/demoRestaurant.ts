@@ -15,12 +15,15 @@ export const demoRestaurant: RestaurantInfo = {
     city: "La Seyne-sur-Mer",
     full: "2459 Avenue Pierre-Auguste Renoir, 83500 La Seyne-sur-Mer",
   },
-  phone: "Téléphone à confirmer",
+  phone: "04 83 73 95 34",
   email: "contact@comptoirdauguste.fr",
   socials: [
-    { label: "Instagram", href: "#" },
-    { label: "TikTok", href: "#" },
-    { label: "Facebook", href: "#" },
+    { label: "Instagram", href: "https://www.instagram.com/comptoirdauguste/" },
+    { label: "TikTok", href: "https://www.tiktok.com/@comptoir.dauguste" },
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/profile.php?id=61593331573704",
+    },
   ],
   mapEmbedUrl:
     "https://www.google.com/maps?q=2459+Avenue+Pierre-Auguste+Renoir,+83500+La+Seyne-sur-Mer&output=embed",

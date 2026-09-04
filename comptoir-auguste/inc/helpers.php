@@ -63,6 +63,14 @@ function ca_uber_eats_url(): string
 }
 
 /**
+ * Deliveroo store URL (empty = button visible but not clickable).
+ */
+function ca_deliveroo_url(): string
+{
+    return trim((string) apply_filters('ca_deliveroo_url', CA_DELIVEROO_URL));
+}
+
+/**
  * Internal page URL by slug (falls back to home + slug).
  */
 function ca_page_url(string $slug): string

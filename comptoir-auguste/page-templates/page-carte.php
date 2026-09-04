@@ -25,10 +25,6 @@ $categories = ca_categories();
 		'inner'   => static function () use ($categories): void {
 			?>
 			<div class="container section <?php echo esc_attr(ca_class('page-carte', 'page')); ?>">
-				<p class="<?php echo esc_attr(ca_class('page-carte', 'lead')); ?>">
-					<?php esc_html_e('Survolez les familles de plats ci-dessous. Pour commander, les plats du jour et les prix sont sur Fox Order (ou Uber Eats en livraison).', 'comptoir-auguste'); ?>
-				</p>
-
 				<div class="<?php echo esc_attr(ca_class('page-carte', 'grid')); ?>">
 					<?php foreach ($categories as $category) : ?>
 						<article
@@ -51,6 +47,7 @@ $categories = ca_categories();
 						<?php esc_html_e('Voir la carte & commander', 'comptoir-auguste'); ?>
 					</a>
 					<?php get_template_part('template-parts/components/uber', 'eats-button'); ?>
+					<?php get_template_part('template-parts/components/deliveroo', 'button'); ?>
 				</div>
 			</div>
 			<?php
@@ -62,7 +59,7 @@ $categories = ca_categories();
 <div class="container section--tight">
 	<?php get_template_part('template-parts/components/order', 'cta', [
 		'title' => __('On vous prépare quoi ?', 'comptoir-auguste'),
-		'text'  => __('La carte complète est à la commande — frais, du jour, fait maison.', 'comptoir-auguste'),
+		'text'  => __('La carte complète est à la commande.', 'comptoir-auguste'),
 		'tone'  => 'blue',
 	]); ?>
 </div>

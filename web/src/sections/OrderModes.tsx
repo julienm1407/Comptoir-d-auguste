@@ -5,6 +5,7 @@ import { deliveryOptions } from "@/data/demoContent";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { UberEatsButton } from "@/components/UberEatsButton";
+import { DeliverooButton } from "@/components/DeliverooButton";
 import styles from "./OrderModes.module.css";
 
 const icons = {

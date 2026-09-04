@@ -26,22 +26,34 @@ $r = ca_restaurant();
 				<?php esc_html_e('Nous contacter', 'comptoir-auguste'); ?>
 			</a>
 		</div>
-		<div class="reveal <?php echo esc_attr(ca_class('Location', 'map')); ?>">
-			<?php if (!empty($r['mapEmbedUrl'])) : ?>
-				<iframe
-					class="<?php echo esc_attr(ca_class('Location', 'mapFrame')); ?>"
-					title="<?php echo esc_attr(sprintf(/* translators: %s address */ __('Carte — %s', 'comptoir-auguste'), $r['address'])); ?>"
-					src="<?php echo esc_url($r['mapEmbedUrl']); ?>"
+		<div class="reveal <?php echo esc_attr(ca_class('Location', 'media')); ?>">
+			<figure class="<?php echo esc_attr(ca_class('Location', 'facade')); ?>">
+				<img
+					class="<?php echo esc_attr(ca_class('Location', 'facadeImage')); ?>"
+					src="<?php echo esc_url(ca_brand('devanture.jpg')); ?>"
+					alt="<?php esc_attr_e('Devanture du Comptoir d’Auguste — La Seyne-sur-Mer', 'comptoir-auguste'); ?>"
 					loading="lazy"
-					referrerpolicy="no-referrer-when-downgrade"
-					allowfullscreen
-				></iframe>
-			<?php else : ?>
-				<a class="<?php echo esc_attr(ca_class('Location', 'mapPlaceholder')); ?>" href="<?php echo esc_url($r['mapLink'] ?? '#'); ?>" target="_blank" rel="noreferrer">
-					<p><?php esc_html_e('Voir sur Google Maps', 'comptoir-auguste'); ?></p>
-					<span><?php echo esc_html($r['address']); ?></span>
-				</a>
-			<?php endif; ?>
+					width="1200"
+					height="800"
+				>
+			</figure>
+			<div class="<?php echo esc_attr(ca_class('Location', 'map')); ?>">
+				<?php if (!empty($r['mapEmbedUrl'])) : ?>
+					<iframe
+						class="<?php echo esc_attr(ca_class('Location', 'mapFrame')); ?>"
+						title="<?php echo esc_attr(sprintf(/* translators: %s address */ __('Carte — %s', 'comptoir-auguste'), $r['address'])); ?>"
+						src="<?php echo esc_url($r['mapEmbedUrl']); ?>"
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+						allowfullscreen
+					></iframe>
+				<?php else : ?>
+					<a class="<?php echo esc_attr(ca_class('Location', 'mapPlaceholder')); ?>" href="<?php echo esc_url($r['mapLink'] ?? '#'); ?>" target="_blank" rel="noreferrer">
+						<p><?php esc_html_e('Voir sur Google Maps', 'comptoir-auguste'); ?></p>
+						<span><?php echo esc_html($r['address']); ?></span>
+					</a>
+				<?php endif; ?>
+			</div>
 		</div>
 	</div>
 </section>

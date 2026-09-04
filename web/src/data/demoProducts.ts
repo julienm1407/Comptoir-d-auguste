@@ -11,7 +11,7 @@ export const demoCategories: Category[] = [
     slug: "formules",
     name: "Formules",
     description: "Composez votre repas : entrée, plat et dessert.",
-    mosaic: "/brand/rameaux-olivier.png",
+    mosaic: "/brand/formule-mosaique-v2.png",
     showOnHome: true,
   },
   {
@@ -19,15 +19,15 @@ export const demoCategories: Category[] = [
     slug: "entrees",
     name: "Entrées",
     description: "Pour commencer en douceur, tout fait maison.",
-    mosaic: "/brand/huole-dolive.png",
+    mosaic: "/brand/entree-mosaique-v2.png",
     showOnHome: true,
   },
   {
     id: "cat-plats",
     slug: "plats-du-moment",
     name: "Plats du moment",
-    description: "Les plats chauds du jour, généreux et cuisinés sur place.",
-    mosaic: "/brand/viande-fleur.png",
+    description: "Plats généreux et cuisinés sur place.",
+    mosaic: "/brand/plat-mosaique-v4.png",
     showOnHome: true,
   },
   {
@@ -35,15 +35,15 @@ export const demoCategories: Category[] = [
     slug: "salades",
     name: "Salades repas",
     description: "Des salades complètes, fraîches et méditerranéennes.",
-    mosaic: "/brand/vegetarien-fleur.png",
+    mosaic: "/brand/salade-mosaique-v2.png",
     showOnHome: true,
   },
   {
     id: "cat-snacking",
     slug: "snacking",
     name: "Snacking gourmand",
-    description: "Hors menu — sandwiches et gourmandises à emporter.",
-    mosaic: "/brand/epicee-fleur.png",
+    description: "Hors menu — sandwiches et gourmandises.",
+    mosaic: "/brand/snacking-mosaique-v2.png",
     showOnHome: true,
   },
   {
@@ -51,15 +51,15 @@ export const demoCategories: Category[] = [
     slug: "desserts",
     name: "Desserts",
     description: "La touche sucrée, préparée avec soin.",
-    mosaic: "/brand/poisson-fleur.png",
+    mosaic: "/brand/dessert-mosaique-v4.png",
     showOnHome: true,
   },
   {
     id: "cat-boissons",
     slug: "boissons",
     name: "Boissons",
-    description: "Eaux, softs, jus, bières artisanales et vins de Provence.",
-    mosaic: "/brand/cigalle.png",
+    description: "Eaux, softs, jus, bières et vins de Provence.",
+    mosaic: "/brand/boisson-mosaique-v2.png",
     showOnHome: false,
   },
   {
@@ -67,7 +67,7 @@ export const demoCategories: Category[] = [
     slug: "boissons-chaudes",
     name: "Boissons chaudes",
     description: "Cafés, chocolat chaud et thé.",
-    mosaic: "/brand/logo-a.png",
+    mosaic: "/brand/boisson-chaude-mosaique-v2.png",
     showOnHome: false,
   },
 ];
@@ -455,30 +455,30 @@ export const demoProducts: Product[] = [
     "price": 4.3,
     "categorySlug": "entrees",
     "family": "Entrées",
-    "image": "https://images.unsplash.com/photo-1518779578993-ce4289cbd4d4?auto=format&fit=crop&w=900&q=80",
+    "image": "/brand/dishes/caviar-aubergine.jpg",
     "featured": false
   },
   {
     "id": "prod-36",
     "slug": "lasagnes-aux-legumes-et-pesto",
-    "name": "Lasagnes aux légumes et pesto",
-    "description": "Lasagnes de légumes au pesto, cuisinées maison.",
+    "name": "Lasagne aux légumes à la crème de grana padano et pesto",
+    "description": "Lasagne, courgettes, aubergines, sauce tomate, béchamel, grana padano, pesto.",
     "price": 11.9,
     "categorySlug": "plats-du-moment",
     "family": "Plats du moment",
-    "image": "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=900&q=80",
+    "image": "/brand/dishes/lasagne.jpg",
     "featured": true,
     "badge": "du-jour"
   },
   {
     "id": "prod-37",
     "slug": "polpettes-de-boeuf-maccheroni-et-pecorino-en-sauce-tomate",
-    "name": "Polpettes de bœuf, maccheroni et pecorino en sauce tomate",
-    "description": "Polpettes de bœuf, maccheroni et pecorino, nappés de sauce tomate.",
+    "name": "Polpettes de bœuf au pecorino et ses maccheroni en sauce tomate",
+    "description": "Bœuf, pecorino, sauce tomate, pâte maccheroni.",
     "price": 11.9,
     "categorySlug": "plats-du-moment",
     "family": "Plats du moment",
-    "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=900&q=80",
+    "image": "/brand/dishes/polpettes.jpg",
     "featured": true
   },
   {
@@ -501,18 +501,18 @@ export const demoProducts: Product[] = [
     "price": 11.9,
     "categorySlug": "plats-du-moment",
     "family": "Plats du moment",
-    "image": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=900&q=80",
-    "featured": false
+    "image": "/brand/dishes/saute-veau.jpg",
+    "featured": true
   },
   {
     "id": "prod-40",
     "slug": "pave-de-saumon-sur-son-lit-de-confit-de-legumes",
     "name": "Pavé de saumon sur son lit de confit de légumes",
-    "description": "Pavé de saumon posé sur un confit de légumes maison.",
+    "description": "Saumon grillé, tian de légumes confits au four.",
     "price": 11.9,
     "categorySlug": "plats-du-moment",
     "family": "Plats du moment",
-    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80",
+    "image": "/brand/dishes/saumon.jpg",
     "featured": true,
     "badge": "de-saison"
   },
@@ -546,7 +546,7 @@ export const demoProducts: Product[] = [
     "price": 11.9,
     "categorySlug": "salades",
     "family": "Salades repas",
-    "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80",
+    "image": "/brand/dishes/salade-auguste.jpg",
     "featured": true,
     "badge": "signature"
   },
@@ -558,7 +558,7 @@ export const demoProducts: Product[] = [
     "price": 7.9,
     "categorySlug": "snacking",
     "family": "Snacking gourmand",
-    "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80",
+    "image": "/brand/dishes/lobster-roll.jpg",
     "featured": false
   },
   {

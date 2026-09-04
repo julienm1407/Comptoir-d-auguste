@@ -3,7 +3,6 @@ import { FeaturedDishes } from "@/sections/FeaturedDishes";
 import { Hero } from "@/sections/Hero";
 import { Location } from "@/sections/Location";
 import { OrderModes } from "@/sections/OrderModes";
-import { Reviews } from "@/sections/Reviews";
 
 export default function HomePage() {
   return (
@@ -12,7 +11,6 @@ export default function HomePage() {
       <OrderModes />
       <FeaturedDishes />
       <BrandDna />
-      <Reviews />
       <Location />
     </>
   );

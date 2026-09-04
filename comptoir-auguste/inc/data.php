@@ -28,14 +28,14 @@ function ca_restaurant(): array
         'name'         => 'Comptoir d’Auguste',
         'signature'    => 'L’art de la cuisine maison',
         'address'      => '2459 Avenue Pierre-Auguste Renoir, 83500 La Seyne-sur-Mer',
-        'phone'        => 'Téléphone à confirmer',
+        'phone'        => '04 83 73 95 34',
         'email'        => 'contact@comptoirdauguste.fr',
         'mapEmbedUrl'  => 'https://www.google.com/maps?q=2459+Avenue+Pierre-Auguste+Renoir,+83500+La+Seyne-sur-Mer&output=embed',
         'mapLink'      => 'https://www.google.com/maps/search/?api=1&query=2459+Avenue+Pierre-Auguste+Renoir+83500+La+Seyne-sur-Mer',
         'socials'      => [
-            ['label' => 'Instagram', 'href' => '#'],
-            ['label' => 'TikTok', 'href' => '#'],
-            ['label' => 'Facebook', 'href' => '#'],
+            ['label' => 'Instagram', 'href' => 'https://www.instagram.com/comptoirdauguste/'],
+            ['label' => 'TikTok', 'href' => 'https://www.tiktok.com/@comptoir.dauguste'],
+            ['label' => 'Facebook', 'href' => 'https://www.facebook.com/profile.php?id=61593331573704'],
         ],
         'notes'        => '',
         'intro'        => 'Inspiré des saveurs de la Provence et de la Méditerranée, Comptoir d’Auguste vous invite à découvrir une cuisine généreuse, entièrement faite maison, élaborée chaque jour à partir de produits frais et de saison.',
@@ -77,7 +77,7 @@ function ca_delivery_options(): array
     return [
         [
             'label' => 'Livraison',
-            'text'  => 'Chez vous, ou via Uber Eats.',
+            'text'  => 'On vient à vous.',
             'href'  => ca_page_url('livraison'),
             'icon'  => 'delivery',
         ],
@@ -214,20 +214,20 @@ function ca_hero_slides(): array
 {
     return [
         [
-            'src' => 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1800&q=80',
-            'alt' => 'Assiette fraîche de cuisine maison',
+            'src' => ca_brand('devanture.jpg'),
+            'alt' => 'Devanture du Comptoir d’Auguste à La Seyne-sur-Mer',
         ],
         [
-            'src' => 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=80',
-            'alt' => 'Plat généreux méditerranéen',
+            'src' => ca_brand('dishes/polpettes.jpg'),
+            'alt' => 'Polpettes de bœuf et maccheroni',
         ],
         [
-            'src' => 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1800&q=80',
-            'alt' => 'Poisson grillé maison',
+            'src' => ca_brand('dishes/lobster-roll.jpg'),
+            'alt' => 'Lobster roll au poulpe du Comptoir d’Auguste',
         ],
         [
-            'src' => 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1800&q=80',
-            'alt' => 'Cuisine préparée avec passion',
+            'src' => ca_brand('dishes/salade-auguste.jpg'),
+            'alt' => 'Salade L’Auguste au poulpe',
         ],
     ];
 }

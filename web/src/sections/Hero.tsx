@@ -4,30 +4,33 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { ORDER_URL } from "@/config/site";
-import { featuredProducts } from "@/data/demoProducts";
+import { demoProducts, featuredProducts } from "@/data/demoProducts";
 import { Button } from "@/components/Button";
 import styles from "./Hero.module.css";
 
 const slides = [
   {
-    src: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1800&q=80",
-    alt: "Assiette fraîche de cuisine maison",
+    src: "/brand/devanture.jpg",
+    alt: "Devanture du Comptoir d’Auguste à La Seyne-sur-Mer",
   },
   {
-    src: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=80",
-    alt: "Plat généreux méditerranéen",
+    src: "/brand/dishes/polpettes.jpg",
+    alt: "Polpettes de bœuf et maccheroni",
   },
   {
-    src: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1800&q=80",
-    alt: "Poisson grillé maison",
+    src: "/brand/dishes/lobster-roll.jpg",
+    alt: "Lobster roll au poulpe du Comptoir d’Auguste",
   },
   {
-    src: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1800&q=80",
-    alt: "Cuisine préparée avec passion",
+    src: "/brand/dishes/salade-auguste.jpg",
+    alt: "Salade L’Auguste au poulpe",
   },
 ];
 
-const spotlight = featuredProducts[0];
+const spotlight =
+  demoProducts.find(
+    (p) => p.slug === "saute-de-veau-aux-carottes-et-champignons",
+  ) ?? featuredProducts[0];
 
 export function Hero() {
   const [index, setIndex] = useState(0);

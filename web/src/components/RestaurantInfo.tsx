@@ -14,7 +14,9 @@ export function RestaurantInfo() {
       </div>
       <div>
         <h3 className={styles.label}>Téléphone</h3>
-        <p>{phone}</p>
+        <p>
+          <a href="tel:+33483739534">{phone}</a>
+        </p>
       </div>
       <div>
         <h3 className={styles.label}>E-mail</h3>

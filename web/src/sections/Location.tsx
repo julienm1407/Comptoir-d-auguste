@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { demoRestaurant } from "@/data/demoRestaurant";
 import { OpeningHours, RestaurantInfo } from "@/components/RestaurantInfo";
@@ -25,22 +26,39 @@ export function Location() {
           </Link>
         </Reveal>
 
-        <Reveal className={styles.map}>
-          {mapEmbedUrl ? (
-            <iframe
-              className={styles.mapFrame}
-              title={`Carte — ${address.full}`}
-              src={mapEmbedUrl}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
+        <Reveal className={styles.media}>
+          <figure className={styles.facade}>
+            <Image
+              src="/brand/devanture.jpg"
+              alt="Devanture du Comptoir d’Auguste — La Seyne-sur-Mer"
+              width={1200}
+              height={800}
+              className={styles.facadeImage}
+              sizes="(max-width: 1023px) 100vw, 50vw"
             />
-          ) : (
-            <a className={styles.mapPlaceholder} href={mapLink} target="_blank" rel="noreferrer">
-              <p>Voir sur Google Maps</p>
-              <span>{address.full}</span>
-            </a>
-          )}
+          </figure>
+          <div className={styles.map}>
+            {mapEmbedUrl ? (
+              <iframe
+                className={styles.mapFrame}
+                title={`Carte — ${address.full}`}
+                src={mapEmbedUrl}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            ) : (
+              <a
+                className={styles.mapPlaceholder}
+                href={mapLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p>Voir sur Google Maps</p>
+                <span>{address.full}</span>
+              </a>
+            )}
+          </div>
         </Reveal>
       </div>
     </section>

@@ -14,7 +14,7 @@ $r = ca_restaurant();
 	</div>
 	<div>
 		<h3 class="<?php echo esc_attr(ca_class('RestaurantInfo', 'label')); ?>"><?php esc_html_e('Téléphone', 'comptoir-auguste'); ?></h3>
-		<p><?php echo esc_html($r['phone']); ?></p>
+		<p><a href="tel:+33483739534"><?php echo esc_html($r['phone']); ?></a></p>
 	</div>
 	<div>
 		<h3 class="<?php echo esc_attr(ca_class('RestaurantInfo', 'label')); ?>"><?php esc_html_e('E-mail', 'comptoir-auguste'); ?></h3>

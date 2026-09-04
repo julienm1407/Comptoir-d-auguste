@@ -7,6 +7,7 @@ import { PageHero } from "@/components/PageHero";
 import { OrderCTA } from "@/components/OrderCTA";
 import { SideMosaic } from "@/components/SideMosaic";
 import { UberEatsButton } from "@/components/UberEatsButton";
+import { DeliverooButton } from "@/components/DeliverooButton";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -30,11 +31,6 @@ export default function CartePage() {
           variant="dense"
         >
           <div className={`container section ${styles.page}`}>
-            <p className={styles.lead}>
-              Survolez les familles de plats ci-dessous. Pour commander, les plats
-              du jour et les prix sont sur Fox Order (ou Uber Eats en livraison).
-            </p>
-
             <div className={styles.grid}>
               {demoCategories.map((category) => (
                 <article
@@ -63,6 +59,7 @@ export default function CartePage() {
                 Voir la carte & commander
               </Button>
               <UberEatsButton />
+              <DeliverooButton />
             </div>
           </div>
         </SideMosaic>
@@ -71,7 +68,7 @@ export default function CartePage() {
       <div className="container section--tight">
         <OrderCTA
           title="On vous prépare quoi ?"
-          text="La carte complète est à la commande — frais, du jour, fait maison."
+          text="La carte complète est à la commande."
           tone="blue"
         />
       </div>
