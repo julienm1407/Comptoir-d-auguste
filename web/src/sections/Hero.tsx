@@ -18,12 +18,12 @@ const slides = [
     alt: "Polpettes de bœuf et maccheroni",
   },
   {
-    src: "/brand/dishes/lobster-roll.jpg",
-    alt: "Lobster roll au poulpe du Comptoir d’Auguste",
+    src: "/brand/dishes/salade-mediterraneenne.jpg",
+    alt: "Salade Méditerranéenne — thon, œuf et légumes",
   },
   {
-    src: "/brand/dishes/salade-auguste.jpg",
-    alt: "Salade L’Auguste au poulpe",
+    src: "/brand/dishes/salade-paysanne.jpg",
+    alt: "Salade Paysanne — lard grillé et pommes grenaille",
   },
 ];
 

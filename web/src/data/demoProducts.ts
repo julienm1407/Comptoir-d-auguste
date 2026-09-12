@@ -524,8 +524,8 @@ export const demoProducts: Product[] = [
     "price": 11.9,
     "categorySlug": "salades",
     "family": "Salades repas",
-    "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80",
-    "featured": false
+    "image": "/brand/dishes/salade-paysanne.jpg",
+    "featured": true
   },
   {
     "id": "prod-42",
@@ -535,7 +535,7 @@ export const demoProducts: Product[] = [
     "price": 11.9,
     "categorySlug": "salades",
     "family": "Salades repas",
-    "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=900&q=80",
+    "image": "/brand/dishes/salade-mediterraneenne.jpg",
     "featured": true
   },
   {
@@ -755,12 +755,15 @@ export const homeCategories = demoCategories.filter((c) => c.showOnHome);
 
 export const featuredProducts = demoProducts.filter((p) => p.featured);
 
-/** Suggestions home — max 6 plats du moment (featured d’abord). */
+/** Suggestions home — 3 plats + salades mises en avant. */
 export const momentShowcaseProducts: Product[] = (() => {
-  const moment = demoProducts.filter((p) => p.categorySlug === "plats-du-moment");
-  const featured = moment.filter((p) => p.featured);
-  const pool = featured.length >= 3 ? featured : moment;
-  return pool.slice(0, 6);
+  const plats = demoProducts
+    .filter((p) => p.categorySlug === "plats-du-moment" && p.featured)
+    .slice(0, 3);
+  const salades = demoProducts.filter(
+    (p) => p.categorySlug === "salades" && p.featured,
+  );
+  return [...plats, ...salades].slice(0, 6);
 })();
 
 export const dailySpecials = demoProducts.filter(

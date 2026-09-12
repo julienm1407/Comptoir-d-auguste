@@ -37,6 +37,6 @@ export const FOOTER_NAV = [
 
 export const FOOTER_ORDER = [
   { label: "Commander", href: ORDER_URL },
-  { label: "Livraison", href: "/livraison" },
+  // Livraison propre en standby — réactiver { label: "Livraison", href: "/livraison" }
   { label: "À emporter", href: "/a-emporter" },
 ] as const;

@@ -69,7 +69,7 @@ export function FeaturedDishes() {
           <Reveal>
             <SectionTitle
               eyebrow="À découvrir"
-              title="Les plats du moment"
+              title="Plats & salades"
             />
           </Reveal>
 

@@ -23,7 +23,7 @@ if (empty($products)) {
 					<div class="<?php echo esc_attr(ca_class('SectionTitle', 'root', 'left', 'dark')); ?>">
 						<p class="<?php echo esc_attr(ca_class('SectionTitle', 'eyebrow')); ?>"><?php esc_html_e('À découvrir', 'comptoir-auguste'); ?></p>
 						<h2 id="featured-title" class="<?php echo esc_attr(ca_class('SectionTitle', 'title')); ?>">
-							<?php esc_html_e('Les plats du moment', 'comptoir-auguste'); ?>
+							<?php esc_html_e('Plats & salades', 'comptoir-auguste'); ?>
 						</h2>
 					</div>
 				</div>

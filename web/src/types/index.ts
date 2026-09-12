@@ -68,6 +68,8 @@ export interface DeliveryOption {
   shortDescription: string;
   /** Empty / omitted = non-clickable info card (ex. Sur place) */
   href?: string;
+  /** Visible but inactive — own delivery paused; Uber Eats / Deliveroo remain */
+  standby?: boolean;
   icon: "delivery" | "takeaway" | "dine-in";
 }
 

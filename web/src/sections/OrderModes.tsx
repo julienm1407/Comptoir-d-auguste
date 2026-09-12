@@ -115,7 +115,14 @@ function ModeCard({
 }: {
   option: (typeof deliveryOptions)[number];
 }) {
-  const className = [styles.card, styles[`tone-${option.icon}`]].join(" ");
+  const standby = Boolean(option.standby);
+  const className = [
+    styles.card,
+    styles[`tone-${option.icon}`],
+    standby && styles.standby,
+  ]
+    .filter(Boolean)
+    .join(" ");
   const body = (
     <>
       <span className={styles.icon} aria-hidden>
@@ -129,9 +136,15 @@ function ModeCard({
     </>
   );
 
-  if (!option.href) {
+  if (standby || !option.href) {
     return (
-      <div className={[className, styles.static].join(" ")} aria-label={option.label}>
+      <div
+        className={[className, styles.static].join(" ")}
+        aria-label={
+          standby ? `${option.label} — bientôt disponible` : option.label
+        }
+        aria-disabled={standby || undefined}
+      >
         {body}
       </div>
     );
@@ -182,6 +195,7 @@ export function OrderModes() {
             Commander
           </Button>
           <UberEatsButton />
+          <DeliverooButton />
         </Reveal>
       </div>
     </section>

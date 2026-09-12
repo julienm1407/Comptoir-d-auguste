@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { ORDER_URL } from "@/config/site";
 import { deliverySteps } from "@/data/demoContent";
-import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { UberEatsButton } from "@/components/UberEatsButton";
 import { DeliverooButton } from "@/components/DeliverooButton";
@@ -10,7 +8,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Livraison",
   description:
-    "Auguste vient à vous — en livraison directe, Uber Eats ou Deliveroo.",
+    "Commandez en livraison via Uber Eats ou Deliveroo — la livraison directe arrive bientôt.",
 };
 
 export default function LivraisonPage() {
@@ -18,7 +16,7 @@ export default function LivraisonPage() {
     <>
       <PageHero
         title="Livraison"
-        text="Auguste vient à vous. Commandez chez nous pour une livraison directe, ou passez par Uber Eats / Deliveroo."
+        text="Pour l’instant, Auguste livre via Uber Eats et Deliveroo. La livraison directe reviendra bientôt."
       />
 
       <div className={`container section ${styles.page}`}>
@@ -39,29 +37,26 @@ export default function LivraisonPage() {
           <ul>
             <li>
               <strong>Modes</strong>
-              <span>Livraison directe, Uber Eats ou Deliveroo</span>
+              <span>Uber Eats ou Deliveroo (livraison directe bientôt)</span>
             </li>
             <li>
               <strong>Zones</strong>
-              <span>À confirmer selon le mode</span>
+              <span>Selon la plateforme choisie</span>
             </li>
             <li>
               <strong>Horaires</strong>
-              <span>À confirmer selon le mode</span>
+              <span>Selon la plateforme choisie</span>
             </li>
             <li>
               <strong>Frais de livraison</strong>
-              <span>Selon le mode choisi</span>
+              <span>Selon la plateforme choisie</span>
             </li>
           </ul>
           <p className={styles.note}>
-            Commandez chez nous pour une livraison directe, ou via Uber Eats /
-            Deliveroo — selon votre préférence.
+            Commandez via Uber Eats ou Deliveroo — la livraison directe du
+            comptoir sera de retour bientôt.
           </p>
           <div className={styles.actions}>
-            <Button href={ORDER_URL} size="lg" fullWidth>
-              Commander (livraison directe)
-            </Button>
             <UberEatsButton fullWidth />
             <DeliverooButton fullWidth />
           </div>

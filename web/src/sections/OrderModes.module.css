@@ -94,6 +94,15 @@
   box-shadow: none;
 }
 
+.standby {
+  opacity: 0.55;
+  filter: grayscale(0.35);
+}
+
+.standby .accent {
+  opacity: 0.45;
+}
+
 .icon {
   display: grid;
   place-items: center;

@@ -38,17 +38,27 @@ $icons = [
 		<div class="<?php echo esc_attr(ca_class('OrderModes', 'grid')); ?>">
 			<?php foreach ($options as $option) : ?>
 				<?php
-				$icon    = $option['icon'] ?? 'delivery';
-				$tone    = 'tone-' . $icon;
-				$href    = trim((string) ($option['href'] ?? ''));
-				$is_link = $href !== '';
-				$classes = ca_class('OrderModes', 'card', $tone) . ($is_link ? '' : ' ' . ca_class('OrderModes', 'static'));
+				$icon     = $option['icon'] ?? 'delivery';
+				$tone     = 'tone-' . $icon;
+				$href     = trim((string) ($option['href'] ?? ''));
+				$standby  = !empty($option['standby']);
+				$is_link  = !$standby && $href !== '';
+				$classes  = ca_class('OrderModes', 'card', $tone);
+				if (!$is_link) {
+					$classes .= ' ' . ca_class('OrderModes', 'static');
+				}
+				if ($standby) {
+					$classes .= ' ' . ca_class('OrderModes', 'standby');
+				}
+				$aria_label = $standby
+					? sprintf(/* translators: %s: mode label */ __('%s — bientôt disponible', 'comptoir-auguste'), $option['label'])
+					: $option['label'];
 				?>
 				<div class="reveal">
 					<?php if ($is_link) : ?>
 						<a class="<?php echo esc_attr($classes); ?>" href="<?php echo esc_url($href); ?>">
 					<?php else : ?>
-						<div class="<?php echo esc_attr($classes); ?>" aria-label="<?php echo esc_attr($option['label']); ?>">
+						<div class="<?php echo esc_attr($classes); ?>" aria-label="<?php echo esc_attr($aria_label); ?>"<?php echo $standby ? ' aria-disabled="true"' : ''; ?>>
 					<?php endif; ?>
 						<span class="<?php echo esc_attr(ca_class('OrderModes', 'icon')); ?>" aria-hidden="true">
 							<?php echo $icons[$icon] ?? $icons['delivery']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG ?>

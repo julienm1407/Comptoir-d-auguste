@@ -524,9 +524,9 @@ function ca_products(): array
             'price'        => 11.9,
             'categorySlug' => 'salades',
             'family'       => 'Salades repas',
-            'image'        => 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80',
+            'image'        => ca_brand('dishes/salade-paysanne.jpg'),
             'badge'        => null,
-            'featured'     => false,
+            'featured'     => true,
         ],
         [
             'slug'         => 'la-mediterraneenne',
@@ -535,7 +535,7 @@ function ca_products(): array
             'price'        => 11.9,
             'categorySlug' => 'salades',
             'family'       => 'Salades repas',
-            'image'        => 'https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=900&q=80',
+            'image'        => ca_brand('dishes/salade-mediterraneenne.jpg'),
             'badge'        => null,
             'featured'     => true,
         ],
@@ -758,17 +758,16 @@ function ca_featured_products(): array
 
 function ca_moment_products(): array
 {
-    $moment = array_values(array_filter(
+    $plats = array_values(array_filter(
         ca_products(),
-        static fn(array $p): bool => ($p['categorySlug'] ?? '') === 'plats-du-moment'
+        static fn(array $p): bool => ($p['categorySlug'] ?? '') === 'plats-du-moment' && !empty($p['featured'])
     ));
-    $featured = array_values(array_filter(
-        $moment,
-        static fn(array $p): bool => !empty($p['featured'])
+    $salades = array_values(array_filter(
+        ca_products(),
+        static fn(array $p): bool => ($p['categorySlug'] ?? '') === 'salades' && !empty($p['featured'])
     ));
-    $pool = count($featured) >= 3 ? $featured : $moment;
 
-    return array_slice($pool, 0, 6);
+    return array_slice(array_merge(array_slice($plats, 0, 3), $salades), 0, 6);
 }
 
 function ca_home_categories(): array

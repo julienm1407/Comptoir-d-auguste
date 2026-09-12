@@ -48,12 +48,12 @@ function ca_restaurant(): array
 function ca_opening_hours(): array
 {
     return [
-        ['day' => 'Lundi', 'hours' => '8h00 – 16h00'],
-        ['day' => 'Mardi', 'hours' => '8h00 – 16h00'],
-        ['day' => 'Mercredi', 'hours' => '8h00 – 16h00'],
-        ['day' => 'Jeudi', 'hours' => '8h00 – 16h00'],
-        ['day' => 'Vendredi', 'hours' => '8h00 – 16h00'],
-        ['day' => 'Samedi', 'hours' => 'Fermé'],
+        ['day' => 'Lundi', 'hours' => '8h00 – 14h30'],
+        ['day' => 'Mardi', 'hours' => '8h00 – 14h30'],
+        ['day' => 'Mercredi', 'hours' => '8h00 – 14h30'],
+        ['day' => 'Jeudi', 'hours' => '8h00 – 14h30'],
+        ['day' => 'Vendredi', 'hours' => '8h00 – 14h30'],
+        ['day' => 'Samedi', 'hours' => '9h00 – 13h00'],
         ['day' => 'Dimanche', 'hours' => 'Fermé'],
     ];
 }
@@ -67,7 +67,7 @@ function ca_takeaway_hours(): array
         ['day' => 'Mercredi', 'hours' => '10h30 – 15h00'],
         ['day' => 'Jeudi', 'hours' => '10h30 – 15h00'],
         ['day' => 'Vendredi', 'hours' => '10h30 – 15h00'],
-        ['day' => 'Samedi', 'hours' => 'Fermé'],
+        ['day' => 'Samedi', 'hours' => '9h00 – 13h00'],
         ['day' => 'Dimanche', 'hours' => 'Fermé'],
     ];
 }
@@ -77,8 +77,8 @@ function ca_delivery_options(): array
     return [
         [
             'label' => 'Livraison',
-            'text'  => 'On vient à vous.',
-            'href'  => ca_page_url('livraison'),
+            'text'  => 'Uber Eats & Deliveroo',
+            'href'  => '',
             'icon'  => 'delivery',
         ],
         [
@@ -205,7 +205,7 @@ function ca_footer_order(): array
 {
     return [
         ['label' => 'Commander', 'href' => ca_order_url()],
-        ['label' => 'Livraison', 'href' => ca_page_url('livraison')],
+        // Livraison propre en standby — réactiver lien vers ca_page_url('livraison')
         ['label' => 'À emporter', 'href' => ca_page_url('a-emporter')],
     ];
 }
@@ -222,12 +222,12 @@ function ca_hero_slides(): array
             'alt' => 'Polpettes de bœuf et maccheroni',
         ],
         [
-            'src' => ca_brand('dishes/lobster-roll.jpg'),
-            'alt' => 'Lobster roll au poulpe du Comptoir d’Auguste',
+            'src' => ca_brand('dishes/salade-mediterraneenne.jpg'),
+            'alt' => 'Salade Méditerranéenne — thon, œuf et légumes',
         ],
         [
-            'src' => ca_brand('dishes/salade-auguste.jpg'),
-            'alt' => 'Salade L’Auguste au poulpe',
+            'src' => ca_brand('dishes/salade-paysanne.jpg'),
+            'alt' => 'Salade Paysanne — lard grillé et pommes grenaille',
         ],
     ];
 }
