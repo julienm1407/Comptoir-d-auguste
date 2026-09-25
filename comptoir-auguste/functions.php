@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('CA_THEME_VERSION', '1.2.15');
+define('CA_THEME_VERSION', '1.2.17');
 define('CA_THEME_DIR', get_template_directory());
 define('CA_THEME_URI', get_template_directory_uri());
 

@@ -9,7 +9,7 @@ $slides    = ca_hero_slides();
 $featured  = ca_featured_products();
 $spotlight = null;
 foreach ($featured as $product) {
-	if (($product['slug'] ?? '') === 'saute-de-veau-aux-carottes-et-champignons') {
+	if (($product['slug'] ?? '') === 'couscous-au-poulet-et-ses-legumes') {
 		$spotlight = $product;
 		break;
 	}

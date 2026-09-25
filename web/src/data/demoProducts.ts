@@ -428,12 +428,12 @@ export const demoProducts: Product[] = [
   {
     "id": "prod-33",
     "slug": "oeuf-mimosa-a-la-mayonnaise-maison",
-    "name": "Œuf mimosa à la mayonnaise maison",
-    "description": "Œuf mimosa et mayonnaise maison, une entrée classique et généreuse.",
+    "name": "Œufs mimosa à la mayonnaise maison",
+    "description": "Œufs mimosa et mayonnaise maison.",
     "price": 4.3,
     "categorySlug": "entrees",
     "family": "Entrées",
-    "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=900&q=80",
+    "image": "/brand/dishes/oeufs-mimosa.jpg",
     "featured": false
   },
   {
@@ -459,26 +459,26 @@ export const demoProducts: Product[] = [
     "featured": false
   },
   {
-    "id": "prod-36",
-    "slug": "lasagnes-aux-legumes-et-pesto",
-    "name": "Lasagne aux légumes à la crème de grana padano et pesto",
-    "description": "Lasagne, courgettes, aubergines, sauce tomate, béchamel, grana padano, pesto.",
+    "id": "prod-62",
+    "slug": "encornets-farcis-a-la-provencale",
+    "name": "Encornets farcis à la provençale et riz",
+    "description": "Encornets farcis, sauce tomate provençale, riz.",
     "price": 11.9,
     "categorySlug": "plats-du-moment",
     "family": "Plats du moment",
-    "image": "/brand/dishes/lasagne.jpg",
+    "image": "/brand/dishes/encornets-farcis.jpg",
     "featured": true,
     "badge": "du-jour"
   },
   {
-    "id": "prod-37",
-    "slug": "polpettes-de-boeuf-maccheroni-et-pecorino-en-sauce-tomate",
-    "name": "Polpettes de bœuf au pecorino et ses maccheroni en sauce tomate",
-    "description": "Bœuf, pecorino, sauce tomate, pâte maccheroni.",
+    "id": "prod-63",
+    "slug": "couscous-au-poulet-et-ses-legumes",
+    "name": "Couscous au poulet et ses légumes",
+    "description": "Poulet, semoule, pois chiche, carotte, navet, courgette.",
     "price": 11.9,
     "categorySlug": "plats-du-moment",
     "family": "Plats du moment",
-    "image": "/brand/dishes/polpettes.jpg",
+    "image": "/brand/dishes/couscous-poulet.jpg",
     "featured": true
   },
   {
@@ -494,17 +494,6 @@ export const demoProducts: Product[] = [
     "badge": "du-jour"
   },
   {
-    "id": "prod-39",
-    "slug": "saute-de-veau-aux-carottes-et-champignons",
-    "name": "Sauté de veau aux carottes et champignons",
-    "description": "Sauté de veau mijoté avec carottes et champignons.",
-    "price": 11.9,
-    "categorySlug": "plats-du-moment",
-    "family": "Plats du moment",
-    "image": "/brand/dishes/saute-veau.jpg",
-    "featured": true
-  },
-  {
     "id": "prod-40",
     "slug": "pave-de-saumon-sur-son-lit-de-confit-de-legumes",
     "name": "Pavé de saumon sur son lit de confit de légumes",
@@ -513,7 +502,7 @@ export const demoProducts: Product[] = [
     "categorySlug": "plats-du-moment",
     "family": "Plats du moment",
     "image": "/brand/dishes/saumon.jpg",
-    "featured": true,
+    "featured": false,
     "badge": "de-saison"
   },
   {
@@ -531,22 +520,22 @@ export const demoProducts: Product[] = [
     "id": "prod-42",
     "slug": "la-mediterraneenne",
     "name": "La Méditerranéenne",
-    "description": "Thon, œuf, haricots verts, poivrons grillés, oignons rouges, tomates, salade, vinaigrette.",
+    "description": "Thon, œuf, haricots verts, poivrons grillés, oignons rouges, tomates, salade, vinaigrette à l'huile d'olive.",
     "price": 11.9,
     "categorySlug": "salades",
     "family": "Salades repas",
-    "image": "/brand/dishes/salade-mediterraneenne.jpg",
+    "image": "/brand/dishes/salade-mediterraneenne-v2.jpg",
     "featured": true
   },
   {
     "id": "prod-43",
     "slug": "l-auguste",
     "name": "L'Auguste",
-    "description": "poulpe, pommes de terre, fenouil, cebette, persil, pointe d'ail, tomates séchées, câpres, vinaigrette citron, huile d'olive.",
+    "description": "Poulpe, pommes de terre, fenouil, cebette, persil, pointe d'ail, tomates confites, câpres, vinaigrette citron à l'huile d'olive.",
     "price": 11.9,
     "categorySlug": "salades",
     "family": "Salades repas",
-    "image": "/brand/dishes/salade-auguste.jpg",
+    "image": "/brand/dishes/salade-auguste-v2.jpg",
     "featured": true,
     "badge": "signature"
   },
@@ -602,7 +591,7 @@ export const demoProducts: Product[] = [
     "price": 4.7,
     "categorySlug": "desserts",
     "family": "Desserts",
-    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80",
+    "image": "/brand/dishes/fondant-chocolat.jpg",
     "featured": false
   },
   {

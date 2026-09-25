@@ -48,11 +48,11 @@ function ca_restaurant(): array
 function ca_opening_hours(): array
 {
     return [
-        ['day' => 'Lundi', 'hours' => '8h00 – 14h30'],
-        ['day' => 'Mardi', 'hours' => '8h00 – 14h30'],
-        ['day' => 'Mercredi', 'hours' => '8h00 – 14h30'],
-        ['day' => 'Jeudi', 'hours' => '8h00 – 14h30'],
-        ['day' => 'Vendredi', 'hours' => '8h00 – 14h30'],
+        ['day' => 'Lundi', 'hours' => '8h00 – 14h30 / 18h00 – 20h45'],
+        ['day' => 'Mardi', 'hours' => '8h00 – 14h30 / 18h00 – 20h45'],
+        ['day' => 'Mercredi', 'hours' => '8h00 – 14h30 / 18h00 – 20h45'],
+        ['day' => 'Jeudi', 'hours' => '8h00 – 14h30 / 18h00 – 20h45'],
+        ['day' => 'Vendredi', 'hours' => '8h00 – 14h30 / 18h00 – 20h45'],
         ['day' => 'Samedi', 'hours' => '9h00 – 13h00'],
         ['day' => 'Dimanche', 'hours' => 'Fermé'],
     ];
@@ -218,16 +218,20 @@ function ca_hero_slides(): array
             'alt' => 'Devanture du Comptoir d’Auguste à La Seyne-sur-Mer',
         ],
         [
-            'src' => ca_brand('dishes/polpettes.jpg'),
-            'alt' => 'Polpettes de bœuf et maccheroni',
+            'src' => ca_brand('dishes/encornets-farcis.jpg'),
+            'alt' => 'Encornets farcis à la provençale',
         ],
         [
-            'src' => ca_brand('dishes/salade-mediterraneenne.jpg'),
+            'src' => ca_brand('dishes/couscous-poulet.jpg'),
+            'alt' => 'Couscous au poulet et ses légumes',
+        ],
+        [
+            'src' => ca_brand('dishes/salade-mediterraneenne-v2.jpg'),
             'alt' => 'Salade Méditerranéenne — thon, œuf et légumes',
         ],
         [
-            'src' => ca_brand('dishes/salade-paysanne.jpg'),
-            'alt' => 'Salade Paysanne — lard grillé et pommes grenaille',
+            'src' => ca_brand('dishes/salade-auguste-v2.jpg'),
+            'alt' => 'Salade L’Auguste — poulpe et pommes de terre',
         ],
     ];
 }

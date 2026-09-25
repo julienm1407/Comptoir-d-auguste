@@ -15,8 +15,8 @@ export function BrandDna() {
         <div className={`container ${styles.layout}`}>
           <Reveal className={styles.media}>
             <Image
-              src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=80"
-              alt="Cuisine maison en préparation"
+              src="/brand/place/cuisine-maison.jpg"
+              alt="L’art de la cuisine maison — équipe du Comptoir d’Auguste"
               fill
               sizes="(max-width: 1024px) 100vw, 80vw"
               className={styles.image}

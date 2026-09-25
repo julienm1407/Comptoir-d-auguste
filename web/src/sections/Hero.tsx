@@ -14,22 +14,26 @@ const slides = [
     alt: "Devanture du Comptoir d’Auguste à La Seyne-sur-Mer",
   },
   {
-    src: "/brand/dishes/polpettes.jpg",
-    alt: "Polpettes de bœuf et maccheroni",
+    src: "/brand/dishes/encornets-farcis.jpg",
+    alt: "Encornets farcis à la provençale et riz",
   },
   {
-    src: "/brand/dishes/salade-mediterraneenne.jpg",
+    src: "/brand/dishes/couscous-poulet.jpg",
+    alt: "Couscous au poulet et ses légumes",
+  },
+  {
+    src: "/brand/dishes/salade-mediterraneenne-v2.jpg",
     alt: "Salade Méditerranéenne — thon, œuf et légumes",
   },
   {
-    src: "/brand/dishes/salade-paysanne.jpg",
-    alt: "Salade Paysanne — lard grillé et pommes grenaille",
+    src: "/brand/dishes/salade-auguste-v2.jpg",
+    alt: "Salade L’Auguste — poulpe et pommes de terre",
   },
 ];
 
 const spotlight =
   demoProducts.find(
-    (p) => p.slug === "saute-de-veau-aux-carottes-et-champignons",
+    (p) => p.slug === "couscous-au-poulet-et-ses-legumes",
   ) ?? featuredProducts[0];
 
 export function Hero() {

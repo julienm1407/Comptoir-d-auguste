@@ -4,11 +4,11 @@ import type { DeliveryOption, OpeningHour, Review } from "@/types";
  * DEMO DATA — replace with Custom Fields / Options (WordPress).
  */
 export const openingHours: OpeningHour[] = [
-  { day: "Lundi", hours: "8h00 – 14h30" },
-  { day: "Mardi", hours: "8h00 – 14h30" },
-  { day: "Mercredi", hours: "8h00 – 14h30" },
-  { day: "Jeudi", hours: "8h00 – 14h30" },
-  { day: "Vendredi", hours: "8h00 – 14h30" },
+  { day: "Lundi", hours: "8h00 – 14h30 / 18h00 – 20h45" },
+  { day: "Mardi", hours: "8h00 – 14h30 / 18h00 – 20h45" },
+  { day: "Mercredi", hours: "8h00 – 14h30 / 18h00 – 20h45" },
+  { day: "Jeudi", hours: "8h00 – 14h30 / 18h00 – 20h45" },
+  { day: "Vendredi", hours: "8h00 – 14h30 / 18h00 – 20h45" },
   { day: "Samedi", hours: "9h00 – 13h00" },
   { day: "Dimanche", hours: "", closed: true },
 ];

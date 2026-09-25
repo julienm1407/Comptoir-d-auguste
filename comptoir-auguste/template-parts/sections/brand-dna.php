@@ -19,8 +19,8 @@ $restaurant = ca_restaurant();
 				<div class="reveal <?php echo esc_attr(ca_class('BrandDna', 'media')); ?>">
 					<img
 						class="<?php echo esc_attr(ca_class('BrandDna', 'image')); ?>"
-						src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=80"
-						alt="<?php esc_attr_e('Cuisine maison en préparation', 'comptoir-auguste'); ?>"
+						src="<?php echo esc_url(ca_brand('place/cuisine-maison.jpg')); ?>"
+						alt="<?php esc_attr_e('L’art de la cuisine maison — équipe du Comptoir d’Auguste', 'comptoir-auguste'); ?>"
 						width="1400"
 						height="900"
 						loading="lazy"

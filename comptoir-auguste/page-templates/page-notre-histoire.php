@@ -25,8 +25,8 @@ $r = ca_restaurant();
 		<div class="<?php echo esc_attr(ca_class('page-notre-histoire', 'media')); ?>">
 			<img
 				class="<?php echo esc_attr(ca_class('page-notre-histoire', 'image')); ?>"
-				src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=80"
-				alt="<?php esc_attr_e('Cuisine maison en préparation', 'comptoir-auguste'); ?>"
+				src="<?php echo esc_url(ca_brand('place/portrait-auguste.jpg')); ?>"
+				alt="<?php esc_attr_e('Portrait d’Auguste au Comptoir d’Auguste', 'comptoir-auguste'); ?>"
 				width="900"
 				height="1100"
 				loading="lazy"

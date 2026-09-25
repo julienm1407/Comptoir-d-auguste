@@ -48,8 +48,8 @@ export default function NotreHistoirePage() {
 
           <div className={styles.media}>
             <Image
-              src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=80"
-              alt="Cuisine maison en préparation"
+              src="/brand/place/portrait-auguste.jpg"
+              alt="Portrait d’Auguste au Comptoir d’Auguste"
               width={900}
               height={1100}
               className={styles.image}
