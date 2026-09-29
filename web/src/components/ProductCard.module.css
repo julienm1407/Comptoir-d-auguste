@@ -91,7 +91,12 @@
 
 @media (max-width: 767px) {
   .compact .media {
-    aspect-ratio: 5 / 4;
+    /* Keep square so dish photos stay centered (5/4 was cropping tops/bottoms) */
+    aspect-ratio: 1 / 1;
+  }
+
+  .compact .image {
+    object-position: center center;
   }
 
   .compact .body {

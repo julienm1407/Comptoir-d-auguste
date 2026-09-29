@@ -3895,7 +3895,12 @@ a.ca-OrderModes-tone-dine-in:hover {
 
 @media (max-width: 767px) {
   .ca-ProductCard-compact .ca-ProductCard-media {
-    aspect-ratio: 5 / 4;
+    /* Keep square so dish photos stay centered (5/4 was cropping tops/bottoms) */
+    aspect-ratio: 1 / 1;
+  }
+
+  .ca-ProductCard-compact .ca-ProductCard-image {
+    object-position: center center;
   }
 
   .ca-ProductCard-compact .ca-ProductCard-body {
