@@ -29,6 +29,8 @@ export interface Product {
   /** Sous-famille (ex. Sodas, Bières) pour regrouper dans la carte */
   family?: string;
   image: string;
+  /** CSS object-position for dish photos (gentle crop focus, no re-encode) */
+  imagePosition?: string;
   badge?: ProductBadge;
   featured?: boolean;
   available?: boolean;

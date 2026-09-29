@@ -30,6 +30,11 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
           className={styles.image}
+          style={
+            product.imagePosition
+              ? { objectPosition: product.imagePosition }
+              : undefined
+          }
         />
         {product.badge ? (
           <span className={styles.badge}>{badgeLabels[product.badge]}</span>

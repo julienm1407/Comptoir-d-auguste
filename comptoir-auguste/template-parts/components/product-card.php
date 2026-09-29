@@ -17,11 +17,13 @@ if (empty($product)) {
 }
 $badges = ca_badge_labels();
 $badge  = $product['badge'] ?? null;
+$image_position = isset($product['imagePosition']) ? (string) $product['imagePosition'] : '';
 $desc   = (string) ($product['description'] ?? '');
 if ($compact && mb_strlen($desc) > 90) {
 	$desc = rtrim(mb_substr($desc, 0, 87)) . '…';
 }
 $classes = ca_class('ProductCard', 'card') . ($compact ? ' ' . ca_class('ProductCard', 'compact') : '');
+$image_style = $image_position !== '' ? 'object-position: ' . esc_attr($image_position) . ';' : '';
 ?>
 <article class="<?php echo esc_attr($classes); ?>">
 	<a class="<?php echo esc_attr(ca_class('ProductCard', 'media')); ?>" href="<?php echo esc_url(ca_order_url()); ?>" aria-label="<?php echo esc_attr(sprintf(/* translators: %s dish name */ __('Commander — %s', 'comptoir-auguste'), $product['name'])); ?>">
@@ -32,6 +34,7 @@ $classes = ca_class('ProductCard', 'card') . ($compact ? ' ' . ca_class('Product
 			loading="lazy"
 			width="600"
 			height="450"
+			<?php if ($image_style !== '') : ?>style="<?php echo $image_style; ?>"<?php endif; ?>
 		>
 		<?php if ($badge && isset($badges[$badge])) : ?>
 			<span class="<?php echo esc_attr(ca_class('ProductCard', 'badge')); ?>"><?php echo esc_html($badges[$badge]); ?></span>

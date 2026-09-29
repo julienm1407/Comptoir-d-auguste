@@ -602,7 +602,8 @@ export const demoProducts: Product[] = [
     "price": 4.7,
     "categorySlug": "desserts",
     "family": "Desserts",
-    "image": "/brand/dishes/fondant-chocolat-v3.jpg",
+    "image": "/brand/dishes/fondant-chocolat-v5.jpg",
+    "imagePosition": "50% 55%",
     "featured": true
   },
   {
@@ -657,7 +658,8 @@ export const demoProducts: Product[] = [
     "price": 3.5,
     "categorySlug": "desserts",
     "family": "Desserts",
-    "image": "/brand/dishes/cookie-trois-chocolats-v3.jpg",
+    "image": "/brand/dishes/cookie-trois-chocolats-v5.jpg",
+    "imagePosition": "35% 60%",
     "featured": true
   },
   {
