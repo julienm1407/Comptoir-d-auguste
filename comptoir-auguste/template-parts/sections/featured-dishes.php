@@ -23,7 +23,7 @@ if (empty($products)) {
 					<div class="<?php echo esc_attr(ca_class('SectionTitle', 'root', 'left', 'dark')); ?>">
 						<p class="<?php echo esc_attr(ca_class('SectionTitle', 'eyebrow')); ?>"><?php esc_html_e('À découvrir', 'comptoir-auguste'); ?></p>
 						<h2 id="featured-title" class="<?php echo esc_attr(ca_class('SectionTitle', 'title')); ?>">
-							<?php esc_html_e('Plats & salades', 'comptoir-auguste'); ?>
+							<?php esc_html_e('La sélection', 'comptoir-auguste'); ?>
 						</h2>
 					</div>
 				</div>
@@ -51,9 +51,9 @@ if (empty($products)) {
 
 					<?php if (count($products) > 1) : ?>
 						<div class="<?php echo esc_attr(ca_class('FeaturedDishes', 'controls')); ?>" data-ca-featured-controls hidden>
-							<button type="button" class="<?php echo esc_attr(ca_class('FeaturedDishes', 'arrow')); ?>" aria-label="<?php esc_attr_e('Plats précédents', 'comptoir-auguste'); ?>" data-ca-featured-prev>←</button>
+							<button type="button" class="<?php echo esc_attr(ca_class('FeaturedDishes', 'arrow')); ?>" aria-label="<?php esc_attr_e('Précédents', 'comptoir-auguste'); ?>" data-ca-featured-prev>←</button>
 							<div class="<?php echo esc_attr(ca_class('FeaturedDishes', 'dots')); ?>" role="tablist" aria-label="<?php esc_attr_e('Pages du carrousel', 'comptoir-auguste'); ?>" data-ca-featured-dots></div>
-							<button type="button" class="<?php echo esc_attr(ca_class('FeaturedDishes', 'arrow')); ?>" aria-label="<?php esc_attr_e('Plats suivants', 'comptoir-auguste'); ?>" data-ca-featured-next>→</button>
+							<button type="button" class="<?php echo esc_attr(ca_class('FeaturedDishes', 'arrow')); ?>" aria-label="<?php esc_attr_e('Suivants', 'comptoir-auguste'); ?>" data-ca-featured-next>→</button>
 						</div>
 					<?php endif; ?>
 				</div>

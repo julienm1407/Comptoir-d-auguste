@@ -69,7 +69,7 @@ export function FeaturedDishes() {
           <Reveal>
             <SectionTitle
               eyebrow="À découvrir"
-              title="Plats & salades"
+              title="La sélection"
             />
           </Reveal>
 
@@ -91,7 +91,7 @@ export function FeaturedDishes() {
                 <button
                   type="button"
                   className={styles.arrow}
-                  aria-label="Plats précédents"
+                  aria-label="Précédents"
                   onClick={() => goTo(index - 1)}
                 >
                   ←
@@ -112,7 +112,7 @@ export function FeaturedDishes() {
                 <button
                   type="button"
                   className={styles.arrow}
-                  aria-label="Plats suivants"
+                  aria-label="Suivants"
                   onClick={() => goTo(index + 1)}
                 >
                   →

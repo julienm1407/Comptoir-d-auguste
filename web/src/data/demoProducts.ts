@@ -467,7 +467,7 @@ export const demoProducts: Product[] = [
     "categorySlug": "plats-du-moment",
     "family": "Plats du moment",
     "image": "/brand/dishes/encornets-farcis.jpg",
-    "featured": true,
+    "featured": false,
     "badge": "du-jour"
   },
   {
@@ -479,6 +479,28 @@ export const demoProducts: Product[] = [
     "categorySlug": "plats-du-moment",
     "family": "Plats du moment",
     "image": "/brand/dishes/couscous-poulet.jpg",
+    "featured": false
+  },
+  {
+    "id": "prod-64",
+    "slug": "filet-de-poulet-sauce-cepes-bolets-et-tagliatelles",
+    "name": "Filet de poulet sauce cèpes, bolets et tagliatelles",
+    "description": "Filet de poulet, sauce cèpes et bolets, tagliatelles.",
+    "price": 11.9,
+    "categorySlug": "plats-du-moment",
+    "family": "Plats du moment",
+    "image": "/brand/dishes/poulet-cepes-tagliatelles.jpg",
+    "featured": true
+  },
+  {
+    "id": "prod-65",
+    "slug": "maccheroni-a-la-creme-de-truffe-et-jambon",
+    "name": "Maccheroni à la crème de truffe et jambon",
+    "description": "Maccheroni, crème de truffe, jambon.",
+    "price": 11.9,
+    "categorySlug": "plats-du-moment",
+    "family": "Plats du moment",
+    "image": "/brand/dishes/maccheroni-truffe.jpg",
     "featured": true
   },
   {
@@ -504,17 +526,6 @@ export const demoProducts: Product[] = [
     "image": "/brand/dishes/saumon.jpg",
     "featured": false,
     "badge": "de-saison"
-  },
-  {
-    "id": "prod-41",
-    "slug": "la-paysanne",
-    "name": "La Paysanne",
-    "description": "lard grillé, pommes de terre grenaille, légumes grillés, salade, olives noires, vinaigrette à l'échalote.",
-    "price": 11.9,
-    "categorySlug": "salades",
-    "family": "Salades repas",
-    "image": "/brand/dishes/salade-paysanne.jpg",
-    "featured": true
   },
   {
     "id": "prod-42",
@@ -592,7 +603,18 @@ export const demoProducts: Product[] = [
     "categorySlug": "desserts",
     "family": "Desserts",
     "image": "/brand/dishes/fondant-chocolat.jpg",
-    "featured": false
+    "featured": true
+  },
+  {
+    "id": "prod-66",
+    "slug": "cheesecake-et-coulis-de-fruits-rouges",
+    "name": "Cheesecake et coulis de fruits rouges",
+    "description": "Cheesecake et coulis de fruits rouges.",
+    "price": 4.7,
+    "categorySlug": "desserts",
+    "family": "Desserts",
+    "image": "/brand/dishes/cheesecake-fruits-rouges.jpg",
+    "featured": true
   },
   {
     "id": "prod-49",
@@ -635,8 +657,8 @@ export const demoProducts: Product[] = [
     "price": 3.5,
     "categorySlug": "desserts",
     "family": "Desserts",
-    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80",
-    "featured": false
+    "image": "/brand/dishes/cookie-trois-chocolats.jpg",
+    "featured": true
   },
   {
     "id": "prod-53",
@@ -744,16 +766,16 @@ export const homeCategories = demoCategories.filter((c) => c.showOnHome);
 
 export const featuredProducts = demoProducts.filter((p) => p.featured);
 
-/** Suggestions home — 3 plats + salades mises en avant. */
-export const momentShowcaseProducts: Product[] = (() => {
-  const plats = demoProducts
-    .filter((p) => p.categorySlug === "plats-du-moment" && p.featured)
-    .slice(0, 3);
-  const salades = demoProducts.filter(
-    (p) => p.categorySlug === "salades" && p.featured,
-  );
-  return [...plats, ...salades].slice(0, 6);
-})();
+/** Suggestions home — sélection visuelle (plats, salades, desserts). */
+export const momentShowcaseProducts: Product[] = [
+  "cheesecake-et-coulis-de-fruits-rouges",
+  "filet-de-poulet-sauce-cepes-bolets-et-tagliatelles",
+  "fondant-au-chocolat-et-sa-creme-anglaise",
+  "maccheroni-a-la-creme-de-truffe-et-jambon",
+  "cookie-trois-chocolats-et-noix",
+]
+  .map((slug) => demoProducts.find((p) => p.slug === slug))
+  .filter((p): p is Product => Boolean(p));
 
 export const dailySpecials = demoProducts.filter(
   (p) => p.badge === "du-jour" || p.badge === "de-saison" || p.featured,

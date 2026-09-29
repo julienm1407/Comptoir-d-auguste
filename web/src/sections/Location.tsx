@@ -29,7 +29,7 @@ export function Location() {
         <Reveal className={styles.media}>
           <figure className={styles.facade}>
             <Image
-              src="/brand/devanture.jpg"
+              src="/brand/devanture-v2.jpg"
               alt="Devanture du Comptoir d’Auguste — La Seyne-sur-Mer"
               width={1200}
               height={800}

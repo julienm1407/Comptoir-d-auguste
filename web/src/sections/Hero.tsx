@@ -10,8 +10,12 @@ import styles from "./Hero.module.css";
 
 const slides = [
   {
-    src: "/brand/devanture.jpg",
+    src: "/brand/devanture-v2.jpg",
     alt: "Devanture du Comptoir d’Auguste à La Seyne-sur-Mer",
+  },
+  {
+    src: "/brand/dishes/poulet-cepes-tagliatelles.jpg",
+    alt: "Filet de poulet sauce cèpes, bolets et tagliatelles",
   },
   {
     src: "/brand/dishes/encornets-farcis.jpg",
@@ -20,10 +24,6 @@ const slides = [
   {
     src: "/brand/dishes/couscous-poulet.jpg",
     alt: "Couscous au poulet et ses légumes",
-  },
-  {
-    src: "/brand/dishes/salade-mediterraneenne-v2.jpg",
-    alt: "Salade Méditerranéenne — thon, œuf et légumes",
   },
   {
     src: "/brand/dishes/salade-auguste-v2.jpg",

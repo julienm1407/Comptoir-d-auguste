@@ -471,7 +471,7 @@ function ca_products(): array
             'family'       => 'Plats du moment',
             'image'        => ca_brand('dishes/encornets-farcis.jpg'),
             'badge'        => 'du-jour',
-            'featured'     => true,
+            'featured'     => false,
         ],
         [
             'slug'         => 'couscous-au-poulet-et-ses-legumes',
@@ -481,6 +481,28 @@ function ca_products(): array
             'categorySlug' => 'plats-du-moment',
             'family'       => 'Plats du moment',
             'image'        => ca_brand('dishes/couscous-poulet.jpg'),
+            'badge'        => null,
+            'featured'     => false,
+        ],
+        [
+            'slug'         => 'filet-de-poulet-sauce-cepes-bolets-et-tagliatelles',
+            'name'         => 'Filet de poulet sauce cèpes, bolets et tagliatelles',
+            'description'  => 'Filet de poulet, sauce cèpes et bolets, tagliatelles.',
+            'price'        => 11.9,
+            'categorySlug' => 'plats-du-moment',
+            'family'       => 'Plats du moment',
+            'image'        => ca_brand('dishes/poulet-cepes-tagliatelles.jpg'),
+            'badge'        => null,
+            'featured'     => true,
+        ],
+        [
+            'slug'         => 'maccheroni-a-la-creme-de-truffe-et-jambon',
+            'name'         => 'Maccheroni à la crème de truffe et jambon',
+            'description'  => 'Maccheroni, crème de truffe, jambon.',
+            'price'        => 11.9,
+            'categorySlug' => 'plats-du-moment',
+            'family'       => 'Plats du moment',
+            'image'        => ca_brand('dishes/maccheroni-truffe.jpg'),
             'badge'        => null,
             'featured'     => true,
         ],
@@ -505,17 +527,6 @@ function ca_products(): array
             'image'        => ca_brand('dishes/saumon.jpg'),
             'badge'        => 'de-saison',
             'featured'     => false,
-        ],
-        [
-            'slug'         => 'la-paysanne',
-            'name'         => 'La Paysanne',
-            'description'  => 'lard grillé, pommes de terre grenaille, légumes grillés, salade, olives noires, vinaigrette à l\'échalote.',
-            'price'        => 11.9,
-            'categorySlug' => 'salades',
-            'family'       => 'Salades repas',
-            'image'        => ca_brand('dishes/salade-paysanne.jpg'),
-            'badge'        => null,
-            'featured'     => true,
         ],
         [
             'slug'         => 'la-mediterraneenne',
@@ -592,7 +603,18 @@ function ca_products(): array
             'family'       => 'Desserts',
             'image'        => ca_brand('dishes/fondant-chocolat.jpg'),
             'badge'        => null,
-            'featured'     => false,
+            'featured'     => true,
+        ],
+        [
+            'slug'         => 'cheesecake-et-coulis-de-fruits-rouges',
+            'name'         => 'Cheesecake et coulis de fruits rouges',
+            'description'  => 'Cheesecake et coulis de fruits rouges.',
+            'price'        => 4.7,
+            'categorySlug' => 'desserts',
+            'family'       => 'Desserts',
+            'image'        => ca_brand('dishes/cheesecake-fruits-rouges.jpg'),
+            'badge'        => null,
+            'featured'     => true,
         ],
         [
             'slug'         => 'tarte-aux-pommes',
@@ -634,9 +656,9 @@ function ca_products(): array
             'price'        => 3.5,
             'categorySlug' => 'desserts',
             'family'       => 'Desserts',
-            'image'        => 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80',
+            'image'        => ca_brand('dishes/cookie-trois-chocolats.jpg'),
             'badge'        => null,
-            'featured'     => false,
+            'featured'     => true,
         ],
         [
             'slug'         => 'entree-plat-dessert',
@@ -747,16 +769,25 @@ function ca_featured_products(): array
 
 function ca_moment_products(): array
 {
-    $plats = array_values(array_filter(
-        ca_products(),
-        static fn(array $p): bool => ($p['categorySlug'] ?? '') === 'plats-du-moment' && !empty($p['featured'])
-    ));
-    $salades = array_values(array_filter(
-        ca_products(),
-        static fn(array $p): bool => ($p['categorySlug'] ?? '') === 'salades' && !empty($p['featured'])
-    ));
+    $slugs = [
+        'cheesecake-et-coulis-de-fruits-rouges',
+        'filet-de-poulet-sauce-cepes-bolets-et-tagliatelles',
+        'fondant-au-chocolat-et-sa-creme-anglaise',
+        'maccheroni-a-la-creme-de-truffe-et-jambon',
+        'cookie-trois-chocolats-et-noix',
+    ];
+    $by_slug = [];
+    foreach (ca_products() as $product) {
+        $by_slug[$product['slug'] ?? ''] = $product;
+    }
+    $out = [];
+    foreach ($slugs as $slug) {
+        if (isset($by_slug[$slug])) {
+            $out[] = $by_slug[$slug];
+        }
+    }
 
-    return array_slice(array_merge(array_slice($plats, 0, 3), $salades), 0, 6);
+    return $out;
 }
 
 function ca_home_categories(): array

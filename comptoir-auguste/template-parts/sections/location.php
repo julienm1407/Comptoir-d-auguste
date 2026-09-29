@@ -30,7 +30,7 @@ $r = ca_restaurant();
 			<figure class="<?php echo esc_attr(ca_class('Location', 'facade')); ?>">
 				<img
 					class="<?php echo esc_attr(ca_class('Location', 'facadeImage')); ?>"
-					src="<?php echo esc_url(ca_brand('devanture.jpg')); ?>"
+					src="<?php echo esc_url(ca_brand('devanture-v2.jpg')); ?>"
 					alt="<?php esc_attr_e('Devanture du Comptoir d’Auguste — La Seyne-sur-Mer', 'comptoir-auguste'); ?>"
 					loading="lazy"
 					width="1200"

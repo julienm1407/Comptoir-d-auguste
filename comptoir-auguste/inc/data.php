@@ -53,7 +53,7 @@ function ca_opening_hours(): array
         ['day' => 'Mercredi', 'hours' => '8h00 – 14h30 / 18h00 – 20h45'],
         ['day' => 'Jeudi', 'hours' => '8h00 – 14h30 / 18h00 – 20h45'],
         ['day' => 'Vendredi', 'hours' => '8h00 – 14h30 / 18h00 – 20h45'],
-        ['day' => 'Samedi', 'hours' => '9h00 – 13h00'],
+        ['day' => 'Samedi', 'hours' => '9h30 – 14h00'],
         ['day' => 'Dimanche', 'hours' => 'Fermé'],
     ];
 }
@@ -67,7 +67,7 @@ function ca_takeaway_hours(): array
         ['day' => 'Mercredi', 'hours' => '10h30 – 15h00'],
         ['day' => 'Jeudi', 'hours' => '10h30 – 15h00'],
         ['day' => 'Vendredi', 'hours' => '10h30 – 15h00'],
-        ['day' => 'Samedi', 'hours' => '9h00 – 13h00'],
+        ['day' => 'Samedi', 'hours' => '9h30 – 14h00'],
         ['day' => 'Dimanche', 'hours' => 'Fermé'],
     ];
 }
@@ -214,20 +214,20 @@ function ca_hero_slides(): array
 {
     return [
         [
-            'src' => ca_brand('devanture.jpg'),
+            'src' => ca_brand('devanture-v2.jpg'),
             'alt' => 'Devanture du Comptoir d’Auguste à La Seyne-sur-Mer',
         ],
         [
+            'src' => ca_brand('dishes/poulet-cepes-tagliatelles.jpg'),
+            'alt' => 'Filet de poulet sauce cèpes, bolets et tagliatelles',
+        ],
+        [
             'src' => ca_brand('dishes/encornets-farcis.jpg'),
-            'alt' => 'Encornets farcis à la provençale',
+            'alt' => 'Encornets farcis à la provençale et riz',
         ],
         [
             'src' => ca_brand('dishes/couscous-poulet.jpg'),
             'alt' => 'Couscous au poulet et ses légumes',
-        ],
-        [
-            'src' => ca_brand('dishes/salade-mediterraneenne-v2.jpg'),
-            'alt' => 'Salade Méditerranéenne — thon, œuf et légumes',
         ],
         [
             'src' => ca_brand('dishes/salade-auguste-v2.jpg'),
