@@ -47,7 +47,6 @@ $categories = ca_categories();
 						<?php esc_html_e('Voir la carte & commander', 'comptoir-auguste'); ?>
 					</a>
 					<?php get_template_part('template-parts/components/uber', 'eats-button'); ?>
-					<?php get_template_part('template-parts/components/deliveroo', 'button'); ?>
 				</div>
 			</div>
 			<?php

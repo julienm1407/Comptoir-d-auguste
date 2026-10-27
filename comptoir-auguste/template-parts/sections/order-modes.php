@@ -82,7 +82,6 @@ $icons = [
 				<?php esc_html_e('Commander', 'comptoir-auguste'); ?>
 			</a>
 			<?php get_template_part('template-parts/components/uber', 'eats-button'); ?>
-			<?php get_template_part('template-parts/components/deliveroo', 'button'); ?>
 		</div>
 	</div>
 </section>

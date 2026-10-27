@@ -7,7 +7,6 @@ import { PageHero } from "@/components/PageHero";
 import { OrderCTA } from "@/components/OrderCTA";
 import { SideMosaic } from "@/components/SideMosaic";
 import { UberEatsButton } from "@/components/UberEatsButton";
-import { DeliverooButton } from "@/components/DeliverooButton";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -59,7 +58,6 @@ export default function CartePage() {
                 Voir la carte & commander
               </Button>
               <UberEatsButton />
-              <DeliverooButton />
             </div>
           </div>
         </SideMosaic>

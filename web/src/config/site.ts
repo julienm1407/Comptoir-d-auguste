@@ -13,10 +13,8 @@ export const UBER_EATS_URL =
   process.env.NEXT_PUBLIC_UBER_EATS_URL ??
   "https://www.ubereats.com/fr/store/comptoir-dauguste/O3N2_Ki-Tu27yNL3-ZqdUA?pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjIzMiUyMEF2LiUyMGRlJTIwbGElMjBKZXQlQzMlQTllJTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyQ2hJSnJhU2VYc3NjeVJJUlhnRXVFNFJpakI0JTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMmdvb2dsZV9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTQzLjA3NjM1ODclMkMlMjJsb25naXR1ZGUlMjIlM0E1Ljg5OTkyOTk5OTk5OTk5OTUlN0Q%3D";
 
-/** Deliveroo (livraison alternative — en plus de la livraison directe) */
-export const DELIVEROO_URL =
-  process.env.NEXT_PUBLIC_DELIVEROO_URL ??
-  "https://deliveroo.fr/fr/menu/Toulon/la-seyne-sur-mer/comptoir-dauguste-2459-avenue-pierre-auguste-renoir?geohash=spsjje5h4z40";
+/** Deliveroo — pause pour l’instant (bouton retiré ; URL vide = pas de lien) */
+export const DELIVEROO_URL = process.env.NEXT_PUBLIC_DELIVEROO_URL ?? "";
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://comptoirdauguste.fr";

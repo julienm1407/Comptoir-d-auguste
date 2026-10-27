@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('CA_THEME_VERSION', '1.2.20');
+define('CA_THEME_VERSION', '1.2.21');
 define('CA_THEME_DIR', get_template_directory());
 define('CA_THEME_URI', get_template_directory_uri());
 
@@ -33,12 +33,9 @@ if (!defined('CA_UBER_EATS_URL')) {
     );
 }
 
-/** Deliveroo */
+/** Deliveroo — pause pour l’instant (boutons retirés ; URL vide = pas de lien) */
 if (!defined('CA_DELIVEROO_URL')) {
-    define(
-        'CA_DELIVEROO_URL',
-        'https://deliveroo.fr/fr/menu/Toulon/la-seyne-sur-mer/comptoir-dauguste-2459-avenue-pierre-auguste-renoir?geohash=spsjje5h4z40'
-    );
+    define('CA_DELIVEROO_URL', '');
 }
 
 require_once CA_THEME_DIR . '/inc/helpers.php';

@@ -77,7 +77,7 @@ function ca_delivery_options(): array
     return [
         [
             'label' => 'Livraison',
-            'text'  => 'Uber Eats & Deliveroo',
+            'text'  => 'Uber Eats',
             'href'  => '',
             'icon'  => 'delivery',
         ],
